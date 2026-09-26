@@ -39,6 +39,25 @@ is a clean measurement: the figure is the gap it fell through.
 pushed it back out. Still a craft that did not stay where it was put, but the figure itself is
 spoiled: it measures how hard it was shoved, not how deep it started.
 
+Two things **Moved** does not tell you.
+
+**A craft the game moved itself reads like one that settled.** At the opening of a scene, the game
+sometimes puts a landed craft back onto the ground before its physics starts: stock KSP does it for a
+craft made of a single part and for a craft in the *prelaunch* situation, and some mods, such as
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem), do it for every landed craft. When the
+craft comes back more than 10 cm off the ground, inside it or above it, it is moved onto it in one
+block, and **Moved** then shows that move, not a craft coming to rest. The window cannot tell the two
+apart; `KSP.log` can: every such move leaves a line `ground contact! - error. Moving Vessel up X.XXXm`
+(or `down`) naming the craft, right before `Unpacking`. That is why
+[the loading protocol](the-protocol-loading.md) keeps to loadings without that line, and why, where it
+cannot be avoided, [the measurements](the-measurements-loading.md) mark the lines it moved.
+
+**A jump or a tip-over does not show in the table.** There is one height per loading, and whether the
+craft jumped to get there is something you see on screen, not in the numbers: a jump ends at a height
+like any other. A craft that tipped over is worse: its root part now lies on its side, and **Moved**
+reads the height of a craft lying down, not one that settled. Note what you saw next to each line, as
+[the measurements](the-measurements-loading.md) do.
+
 Watch the live line as the craft settles and you see the demonstration play out: while the craft is
 still on rails the two distances are equal and **Moved** reads `0.000`, and it is the first step of
 physics that breaks the zero.

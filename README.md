@@ -75,18 +75,22 @@ scene, the position the save gives back — and **settled**, once the craft has 
 other. As long as neither of them varies from one loading to the next, the round trip is exact and
 nothing about the craft itself has changed. One of them does vary.
 
+Both readings are of the **craft**, and that is where the instrument stops: it does not, on its own,
+name what moved. A ground rebuilt a little higher or a little lower at every loading accounts for the
+figures, but so would a perfectly steady ground with the craft set down beside it. A second instrument,
+[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2), tells the two
+apart: it measures the ground itself, with no craft in the picture at all.
+
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
 
 ## The window
 
-In flight, a window shows a table with one line per reading, in millimetres: **On rails**, **Settled**,
-and **Moved**, the difference between the two. The bottom line is the reading in progress, its numbers
-running live until the *Record* button at the end of it freezes it into the table. They are about the
-craft you are flying, or about your target when you have set one on another craft — which is what lets
-the second protocol below follow a parked craft while you drive away from it. **Moved** is the
-figure to look at, and it should be zero: the craft was at rest on the ground when the game took it in
-hand, and was handed back at that very height. Its sign tells you how much the figure is worth — a craft that fell
-onto the surface gives a clean reading, one that was pushed back out of it does not.
+In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**, and
+**Moved**, the difference between the two; the bottom line runs live until *Record* freezes it. It
+follows the craft you are flying, or your target — which is how the second protocol below follows a
+parked craft. **Moved** should be zero, and its sign tells you what it is worth: a craft that fell onto
+the surface gives a clean reading, one pushed back out of it does not. It does not show when the game
+itself put the craft back onto the ground, nor a jump or a tip-over.
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
@@ -119,7 +123,8 @@ same save again, six times in all.
 
 Three series, one per protocol, all taken in the same install: Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
-with this mod added.
+with this mod added. The first also goes to the Moon and to Earth, in that install with
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added.
 
 In all three, **On rails** — the height the game hands the craft back at — barely moves: three
 thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
@@ -128,8 +133,12 @@ What it then comes to rest on is never quite where it was.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save
 loaded six times on Kerbin, on the Mun, on Minmus and on Gilly, with a lone capsule, then the whole
-campaign again with a two-part craft. The height the craft comes to rest at is never the same twice:
-lowest to highest, 134.5 mm on Kerbin, 20.7 mm on the Mun, 6.7 mm on Minmus, 3.3 mm on Gilly.
+campaign again with a two-part craft, which also goes to the Moon and to Earth of Real Solar System,
+much larger. The height the craft comes to rest at is never the same twice: lowest to highest,
+134.5 mm on Kerbin, 20.7 mm on the Mun, 6.7 mm on Minmus, 3.3 mm on Gilly, then 262.6 mm on the Moon
+and 740.0 mm on Earth. Real Solar System ships a workaround of its own, which moves a craft back onto
+the ground when it comes back more than 10 cm off; below that, the craft still jumps, and on the Moon
+it tipped over four times with the workaround running.
 
 **→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
 
@@ -147,18 +156,6 @@ at a different height every time: 104.5 mm from the lowest to the highest, upwar
 downwards.
 
 **→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
-
-
-## What this instrument shows, and what it does not
-
-Every table measures the **craft**: set down on the ground, it does not come back to rest where the save
-left it, one loading to the next. That is where the instrument stops — it does not, on its own, name
-what moved. A ground rebuilt a little higher or a little lower at every loading accounts for the
-figures, but so would a perfectly steady ground with the craft set down beside it. A second instrument,
-[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2), tells the two
-apart: it measures the ground itself, with no craft in the picture at all.
-
-**→ Full chapter: [What this instrument shows, and what it does not](docs/what-this-instrument-shows.md)**
 
 ## Get it
 

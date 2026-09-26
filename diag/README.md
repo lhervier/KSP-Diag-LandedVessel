@@ -45,6 +45,9 @@ Copy a save into the folder of a sandbox game and load it from that game.
   of `reload-moon-rss.sfs` with Real Solar System's `VesselGroundPositionEnhancer` turned off, by an
   empty assembly named `WorldStabilizer` in `GameData`.
 - [`runs/reload-moon-rss-stock-14loads.log`](runs/reload-moon-rss-stock-14loads.log) — fourteen loads
-  of `reload-moon-rss.sfs`, with Terrain Precision Fix Diag 2 open as well.
+  of `reload-moon-rss.sfs`.
+- [`runs/reload-moon-rss-stock-tipped.log`](runs/reload-moon-rss-stock-tipped.log) — the first load
+  of `reload-moon-rss-resave.sfs`, Real Solar System as released, where the craft tipped over, with
+  Terrain Precision Fix Diag 2 installed instead of this mod.
 - [`runs/reload-earth-rss-stock.log`](runs/reload-earth-rss-stock.log) — six loads of
-  `reload-earth-rss-resave.sfs`, with Terrain Precision Fix Diag 2 open as well.
+  `reload-earth-rss-resave.sfs`.

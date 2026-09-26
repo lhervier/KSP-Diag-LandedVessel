@@ -1,7 +1,8 @@
 # The measurements: loading the same save
 
 Part of [Terrain Precision Fix Diag 1](../README.md): the readings taken with
-[the loading protocol](the-protocol-loading.md), on four worlds, then on two much larger ones. The other series are in
+[the loading protocol](the-protocol-loading.md), on the four worlds of stock KSP and on two much
+larger ones, the Moon and Earth of Real Solar System. The other series are in
 [The measurements: coming back to a craft you left](the-measurements-approach.md) and
 [The measurements: switching to a craft far away](the-measurements-switching.md).
 
@@ -10,6 +11,15 @@ Part of [Terrain Precision Fix Diag 1](../README.md): the readings taken with
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1 and this mod, and
 nothing else — what most players run, give or take their other mods.
+
+The Moon and Earth are measured on an install of their own: the one above, plus
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) 20.1.3.0 and what it requires
+(Kopernicus, Modular Flight Integrator, KSPTextureLoader, the RSS textures). Real Solar System replaces
+the planets with the real ones: the Moon is more than three times the radius of Kerbin, Earth more than
+ten times. It is installed as released, and it ships a workaround of its own that moves landed craft
+at loading; what that does to the readings is in
+[Real Solar System's own workaround](#real-solar-systems-own-workaround). The saves are in
+[`diag`](../diag/README.md#on-real-solar-system); they only load there.
 
 ## One capsule
 
@@ -49,7 +59,9 @@ Gilly — the smallest place there is to stand on:
 
 A craft made of a single part is a special case for KSP (see [the protocol](the-protocol-loading.md)).
 So the whole campaign was run again with a two-part craft: the same capsule, sitting on a small flat
-fuel tank.
+fuel tank. The Moon and Earth were measured with this craft only: on flat ground on the Moon,
+`reload-moon-rss.sfs`, and on the grass about 1.4 km west of the KSC on Earth,
+`reload-earth-rss-resave.sfs`.
 
 ![Two parts, on Kerbin](../imgs/measures/reload/2parts/00-kerbin.png)
 
@@ -59,97 +71,98 @@ fuel tank.
 
 ![Two parts, on Gilly](../imgs/measures/reload/2parts/30-gilly.png)
 
-| loading | Kerbin — **Moved** (mm) | Mun — **Moved** (mm) | Minmus — **Moved** (mm) | Gilly — **Moved** (mm) |
-|---|---|---|---|---|
-| 1 | +76.134 | −5.641 | +0.392 | +2.007 |
-| 2 | +77.214 | −4.935 | +3.263 | −0.073 |
-| 3 | −25.810 | +6.147 | −1.084 | +0.499 |
-| 4 | +56.322 | +2.259 | +0.800 | +1.008 |
-| 5 | −1.187 | −2.629 | +1.627 | −0.150 |
-| 6 | −47.450 | −1.216 | −1.514 | −0.468 |
-| **lowest to highest** | **124.7 mm** | **11.8 mm** | **4.8 mm** | **2.5 mm** |
+![Two parts, on the Moon](../imgs/measures/reload/2parts/40-moon.png)
 
-## On Real Solar System
+![Two parts, on Earth](../imgs/measures/reload/2parts/50-earth.png)
 
-The same two-part craft, on two bodies of [Real Solar System](https://github.com/KSP-RO/RealSolarSystem),
-a mod that replaces the planets with the real ones: the Moon, more than three times the radius of
-Kerbin, and Earth, more than ten times.
+| loading | Kerbin — **Moved** (mm) | Mun — **Moved** (mm) | Minmus — **Moved** (mm) | Gilly — **Moved** (mm) | the Moon — **Moved** (mm) | Earth — **Moved** (mm) |
+|---|---|---|---|---|---|---|
+| 1 | +76.134 | −5.641 | +0.392 | +2.007 | −63.933 | +82.712 **(jumped)** |
+| 2 | +77.214 | −4.935 | +3.263 | −0.073 | −5.999 | +389.584 *(moved up)* |
+| 3 | −25.810 | +6.147 | −1.084 | +0.499 | +110.293 *(moved up)* | −284.996 *(moved down)* |
+| 4 | +56.322 | +2.259 | +0.800 | +1.008 | +168.523 *(moved up)* | +455.041 *(moved up)* |
+| 5 | −1.187 | −2.629 | +1.627 | −0.150 | +147.171 *(moved up)* | +250.932 *(moved up)* |
+| 6 | −47.450 | −1.216 | −1.514 | −0.468 | −94.096 | −143.697 *(moved down)* |
+| **lowest to highest** | **124.7 mm** | **11.8 mm** | **4.8 mm** | **2.5 mm** | **262.6 mm** | **740.0 mm** |
 
-**The install.** The one above, plus Real Solar System 20.1.3.0 and what it requires (Kopernicus,
-Modular Flight Integrator, KSPTextureLoader, the RSS textures), on an install of its own. The saves
-are in [`diag`](../diag/README.md#on-real-solar-system); they only load there.
+*(moved up)*, *(moved down)*: the craft came back more than 10 cm inside the ground, or more than 10 cm
+above it, and was moved onto it before its physics started, with a `Moving Vessel up` or
+`Moving Vessel down` line in `KSP.log` giving about the same distance. The protocol asks for loadings
+without such a line; on Real Solar System they cannot all be avoided, so the lines are kept, and marked.
+Who moves the craft, and why, is in
+[Real Solar System's own workaround](#real-solar-systems-own-workaround). **(jumped)**: the craft was
+seen to jump.
+
+The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system).
+
+## Real Solar System's own workaround
 
 **Real Solar System already moves landed craft at loading.** It ships a component,
 `VesselGroundPositionEnhancer`, which runs the stock repositioning pass on every landed craft it
-unpacks: a craft found more than 10 cm off the ground is moved onto it before its physics starts, and
-`KSP.log` gets a `Moving Vessel` line. The protocol asks for loadings without such a line; on Real
-Solar System they cannot all be avoided, so every line below says whether the craft was moved. Under
-10 cm, the pass leaves the craft where it is. The component turns itself off when an assembly named
-`WorldStabilizer` is loaded.
+unpacks: a craft found more than 10 cm off the ground, inside it or above it, is moved onto it before
+its physics starts, in one block, and `KSP.log` gets a `Moving Vessel` line. Under 10 cm, the pass
+leaves the craft where it is, inside the ground or not. The component only acts on a *landed* craft. On
+Earth, near the KSC, the craft is in the *prelaunch* situation instead, where the component does not
+run; there, stock KSP runs the same pass on its own, at every loading, which is what moved the craft at
+five of the six loadings above, three times up and twice down. The component turns itself off when an assembly named `WorldStabilizer` is loaded.
 
-### The Moon
+**Loading again and again.** The same save of the Moon, `reload-moon-rss.sfs`, loaded again and again,
+watching the craft rather than the numbers — fourteen loadings, all recorded:
 
-Six loadings of `reload-moon-rss.sfs`:
-
-![Six loadings of the same save, on the Moon](../imgs/measures/reload/rss/10-moon.png)
-
-| loading | **Moved** (mm) | in `KSP.log` |
-|---|---|---|
-| 1 | −63.933 | |
-| 2 | −5.999 | |
-| 3 | +110.293 | `Moving Vessel up 0.111m` |
-| 4 | +168.523 | `Moving Vessel up 0.169m` |
-| 5 | +147.171 | `Moving Vessel up 0.147m` |
-| 6 | −94.096 | |
-| **lowest to highest** | **262.6 mm** | |
-
-Then the same save, loaded again and again, watching the craft rather than the numbers — fourteen
-loadings, all recorded:
-
-![Fourteen loadings of the same save, on the Moon](../imgs/measures/reload/rss/30-moon-14-loads.png)
+![Fourteen loadings of the same save, on the Moon](../imgs/measures/reload/2parts/rss/30-moon-14-loads.png)
 
 | loading | **Moved** (mm) | what the craft did |
 |---|---|---|
-| 1 | +0.725 | nothing |
-| 2 | +38.203 | **jumped** |
-| 3 | +102.844 | moved up by the pass (`0.103m`) |
-| 4 | +208.359 | moved up by the pass (`0.209m`) |
-| 5 | −56.551 | nothing |
-| 6 | +119.249 | moved up by the pass (`0.120m`) |
-| 7 | −5.988 | nothing |
-| 8 | +32.247 | **jumped** |
-| 9 | −37.460 | nothing |
-| 10 | +149.384 | moved up by the pass (`0.150m`) |
-| 11 | −89.105 | nothing |
-| 12 | +100.178 | moved up by the pass (`0.101m`) |
-| 13 | +233.493 | moved up by the pass (`0.234m`) |
-| 14 | +17.103 | **jumped** |
-| **lowest to highest** | **322.6 mm** | |
+| 1 | +257.121 | moved up by the pass (`0.257m`) |
+| 2 | −45.837 | nothing |
+| 3 | +417.383 | **tipped over** |
+| 4 | +172.248 | moved up by the pass (`0.173m`) |
+| 5 | +426.948 | **tipped over** |
+| 6 | −80.558 | nothing |
+| 7 | +25.460 | **jumped** |
+| 8 | −12.557 | nothing |
+| 9 | +226.627 | moved up by the pass (`0.227m`) |
+| 10 | +260.629 | moved up by the pass (`0.261m`) |
+| 11 | −4.673 | nothing |
+| 12 | −10.539 | nothing |
+| 13 | +223.193 | moved up by the pass (`0.223m`) |
+| 14 | +114.687 | moved up by the pass (`0.115m`) |
+| **lowest to highest**, the twelve loadings where the craft stayed upright | **341.2 mm** | |
 
-With the component turned off, by an empty assembly named `WorldStabilizer` in `GameData`, the first
+Where the craft tipped over, **Moved** reads the height of a craft lying on its side, not one that
+settled: those two lines are left out of the spread.
+
+**With the component turned off**, by an empty assembly named `WorldStabilizer` in `GameData`, the first
 loading of the same save was enough:
 
-![The first loading of the same save, on the Moon, with Real Solar System's component turned off](../imgs/measures/reload/rss/20-moon-rss-pass-off.png)
+![The first loading of the same save, on the Moon, with Real Solar System's component turned off](../imgs/measures/reload/2parts/rss/20-moon-rss-pass-off.png)
 
-### Earth
+**With the component on, the craft can tip over too.** At the third and fifth of the fourteen loadings
+above; and twice more on the same craft saved again at a later load, `reload-moon-rss-resave.sfs`, Real
+Solar System as released: at the first loading of one session, and at the fourth of the six loadings
+[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/blob/master/docs/the-measurements-loading.md#the-readings)
+measured on the Moon. Each time, `KSP.log` shows the component running
+(`[RSS-VGPE] CheckGroundCollision()`) and no `Moving Vessel` line: the craft came back less than
+10 cm off the ground, and the pass left it where it was. Here is the third of the fourteen loadings,
+after its *Record*:
 
-Six loadings of `reload-earth-rss-resave.sfs`, a craft parked on the grass about 1.4 km west of the KSC.
-There, the craft is in the *prelaunch* situation, where Real Solar System's component does not run; the
-stock pass ran on its own at three of the loadings.
+![The third of the fourteen loadings, on the Moon, with Real Solar System as released](../imgs/measures/reload/2parts/rss/50-moon-tipped-over.png)
 
-![Six loadings of the same save, on Earth](../imgs/measures/reload/rss/40-earth.png)
+**The component is indispensable, and it is not enough.** Indispensable: over the twenty loadings of
+`reload-moon-rss.sfs`, it moved the craft nine times, each time from 11 to 26 cm inside the ground; with
+it turned off, the very first loading tipped the craft over. Not enough: it only acts beyond 10 cm,
+while on the Moon the ground comes back over 26 to 34 cm from one loading to the next, which leaves
+plenty of room below it — of the fourteen loadings watched, one still made the craft jump and two
+tipped it over, and, on the save taken again, the craft tipped over twice more. On Earth, stock's own pass
+let one jump through in six loadings, for the same reason. And where either pass does
+act, it does not put the craft back where it was saved: it moves the whole of it, up or down, in one
+block, onto a ground that came back somewhere else.
 
-| loading | **Moved** (mm) | what the craft did |
-|---|---|---|
-| 1 | +258.515 | moved up by the pass (`0.259m`) |
-| 2 | +179.984 | moved up by the pass (`0.180m`) |
-| 3 | −42.571 | nothing |
-| 4 | +88.794 | **jumped** |
-| 5 | −42.462 | nothing |
-| 6 | +149.567 | moved up by the pass (`0.150m`) |
-| **lowest to highest** | **301.1 mm** | |
-
-The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system).
+The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system); the session of the
+first tip-over with the component on, in `reload-moon-rss-stock-tipped.log`, and the six loadings of
+Diag 2 on the Moon in
+[Diag 2's `diag/runs`](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/tree/master/diag/runs),
+file `reload-moon-rss-stock.log`.
 
 ## What the numbers say
 
@@ -161,22 +174,19 @@ everywhere, KSP handed the craft back where the save says it was.
 **Settled** did not come back once. On every body, the craft came to rest at a height that changed from
 one loading to the next, and the larger the world, the larger the spread: 3.3 mm on Gilly, 6.7 mm on
 Minmus, 20.7 mm on the Mun, 134.5 mm on Kerbin with one part (2.5 to 124.7 mm with two, the same
-picture), then 262.6 to 322.6 mm on the Moon of Real Solar System and 301.1 mm on its Earth. Smaller
+picture), then 262.6 to 341.2 mm on the Moon of Real Solar System and 740.0 mm on its Earth. Smaller
 world, smaller spread, but never none.
 
 **On the large worlds, the spread is enough to make a craft jump, and the Moved column shows when.** It sorts
-every loading into one of three cases. Wherever the ground came back more than 10 cm higher, the craft
-found itself that deep inside it, and the repositioning pass moved it up before its physics started:
-nothing was seen to move. Wherever the ground came back lower, the craft dropped onto it. And in
-between — the ground a few centimetres higher, the craft that far inside it, under the 10 cm the pass
-acts on — the physics engine pushed it out: four jumps in the twenty loadings watched for them, and,
-with the pass turned off, a craft tipped over at the first loading. On the four worlds of stock KSP,
-the protocol keeps to loadings where the pass never runs, so only the last two cases appear there.
+every loading into one of three cases. Wherever the ground came back more than 10 cm away from the
+craft, higher or lower, the repositioning pass moved the craft onto it, up or down, before its physics
+started: nothing was seen to move. Wherever the ground came back lower by less than that, the craft
+dropped onto it. And wherever it came back higher by less than that — the craft a few centimetres
+inside it, under the 10 cm the pass acts on — the physics engine pushed it out: two jumps and two
+tip-overs in the twenty loadings watched for them, fourteen on the Moon and six on Earth, two more
+tip-overs on the save of the Moon taken again, and, with the pass turned off, a craft tipped over at
+the first loading. On the four worlds of stock KSP, the protocol keeps to loadings where the pass never runs, so
+only the last two cases appear there.
 
-**Real Solar System's component is indispensable, and it is not enough.** Indispensable: over the twenty
-loadings of `reload-moon-rss.sfs`, it moved the craft nine times, each time from 10 to 23 cm inside the
-ground; with it turned off, the very first loading tipped the craft over. Not enough: it only acts beyond
-10 cm, while on the Moon the ground comes back over 26 to 32 cm from one loading to the next, which
-leaves plenty of room below it — three of the fourteen loadings watched still made the craft jump. And
-where it does act, it does not put the craft back where it was saved: it moves the whole of it up, in
-one block, onto a ground that came back somewhere else.
+**Real Solar System's workaround catches part of it, not all of it** — see
+[Real Solar System's own workaround](#real-solar-systems-own-workaround).

@@ -1,6 +1,6 @@
 # This mod's demonstration
 
-Part of [Terrain Precision Fix Diag 1](../README.md): what the mod reads, and why those two numbers are enough.
+Part of [Terrain Precision Fix Diag 1](../README.md): what the mod reads, why those two numbers are enough, and what they cannot tell on their own.
 
 You cannot look at the ground and see this: the surface you walk on and the surface you see are one
 and the same, so the picture shifts along with it. What you can see is what rests *on* the ground. So
@@ -29,4 +29,19 @@ Reload the same save several times, then read the two columns against each other
 you whether KSP puts the craft back where it was; the second one tells you where it actually came to
 rest. As long as neither of them varies from one loading to the next, the round trip is exact and
 nothing about the craft itself has changed. One of them does vary, though — spoiler: the second one.
+
+## What this instrument shows, and what it does not
+
+Both readings are of the **craft**: a craft set down on the ground does not come back to rest where
+the save left it, one loading to the next. That is what the instrument sees, and that is where it
+stops. It does not, on its own, name what moved. A ground rebuilt a little higher or a little lower on
+every loading accounts for the figures — but so would a perfectly steady ground with the craft set
+down beside it, off by a rounding error shared by the placement and by the **On rails** reading, where
+it would cancel out. Both fill the same table.
+
+A second instrument,
+[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2), tells the
+two apart: it measures **the ground** itself — the height of the surface your craft is touching,
+against the height the game computes for that same spot — with no craft in the picture at all. You do
+not need it to follow these readings.
 

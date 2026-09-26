@@ -50,7 +50,7 @@ reference is the height the save was made at, and the save was made on one groun
 game can build there.
 
 As everywhere else with this instrument, what is measured is **the craft**, not the ground it rests
-on — [what this instrument shows, and what it does not](what-this-instrument-shows.md) applies
+on — [what this instrument shows, and what it does not](this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not) applies
 to these readings word for word.
 
 ## The logs

@@ -57,7 +57,7 @@ The size is not the same from one round trip to the next, and it is not guarante
 seen a round trip come back within a millimetre. That is why the protocol asks for a series.
 
 As everywhere else with this instrument, what is measured is **the craft**, not the ground it rests
-on — [what this instrument shows, and what it does not](what-this-instrument-shows.md) applies
+on — [what this instrument shows, and what it does not](this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not) applies
 to these readings word for word.
 
 ## The logs
