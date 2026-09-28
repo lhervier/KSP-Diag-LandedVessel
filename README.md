@@ -96,8 +96,9 @@ itself put the craft back onto the ground, nor a jump or a tip-over.
 
 ## The protocol
 
-Three protocols, one for each way the game can set a craft down on the ground. All three fill the
-same window, and all three come with the craft and the save they were written for.
+Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
+runway, which is not the ground. All four fill the same window, and all four come with the craft and
+the save they were written for.
 
 **Loading the same save.** A lone capsule — no anchor, no wheels, no landing legs — set down on bare
 flat ground, away from the runway and the launchpad, which are structures rather than ground. Let it
@@ -119,16 +120,24 @@ same save again, six times in all.
 
 **→ Full chapter: [The protocol: switching to a craft far away](docs/the-protocol-switching.md)**
 
+**The runway and the grass beside it.** Where the first protocol tells you not to go. Two identical
+craft, one on the runway and one on the grass beside it. Load the save while flying the one on the
+grass, press *Record*, switch to the other with the game's own key, and press *Record* again. Then load
+the same save again, six times in all.
+
+**→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
+
 ## The measurements
 
-Three series, one per protocol, all taken in the same install: Harmony, ModuleManager and
+Four series, one per protocol, all taken in the same install: Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
 with this mod added. The first also goes to the Moon and to Earth, in that install with
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added.
 
-In all three, **On rails** — the height the game hands the craft back at — barely moves: three
+In all four, **On rails** — the height the game hands the craft back at — barely moves: three
 thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
-across a round trip in the second, two thousandths across six loadings in the third. So the craft itself is put back where it was.
+across a round trip in the second, two thousandths across six loadings in the third, one thousandth in
+the fourth. So the craft itself is put back where it was.
 What it then comes to rest on is never quite where it was.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save
@@ -156,6 +165,14 @@ at a different height every time: 104.5 mm from the lowest to the highest, upwar
 downwards.
 
 **→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
+
+**The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). Six
+loadings on Kerbin, two identical craft 152 m apart. Both are handed back at the same height every
+time, within a thousandth of a millimetre. Both come to rest somewhere else every time: within 88.3 mm
+on the grass, within 130.3 mm on the runway. And not together: the step between them, which is the step
+between the grass and the runway, spreads over 81.7 mm.
+
+**→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
 
 ## Get it
 

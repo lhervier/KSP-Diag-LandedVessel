@@ -21,9 +21,10 @@ KSC apron is conveniently flat — but you do have to be off the tarmac itself.
 
 ⚠️ **Not on the launchpad and not on the runway.** It works there too — the numbers move just the
 same. The trouble is that they no longer say what moved. The launchpad and the runway are structures,
-not ground: KSP puts them in place its own way, and their height may well have a wobble of its own.
-A reading taken there is the sum of two effects and tells you nothing about either. On bare terrain
-there is only one thing under the capsule.
+not ground: KSP puts them in place its own way, and the runway's height has a wobble of its own, which
+does not follow the ground's — [The measurements: the runway and the grass beside it](the-measurements-runway.md).
+A reading taken there is about the structure, not the ground. On bare terrain there is only one thing
+under the capsule.
 
 ⚠️ **And the ground must be flat.** A craft made of a single part is a special case for KSP: on every
 loading, it tries to put the craft back onto the ground itself. On flat ground this does nothing,
