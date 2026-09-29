@@ -33,12 +33,18 @@ reading then mixes that move with the ground's. You can tell from `KSP.log`: a l
 `ground contact! - error. Moving Vessel` naming your capsule, right before `Unpacking`. If you get
 that line, find flatter ground.
 
-⚠️ **And the capsule must not slide.** On a slope, even one gentle enough not to produce that line,
-the capsule can slide slowly downhill, and its height goes down as it slides. On a world with little
-gravity like Gilly, a slope you can barely see is enough, at a fraction of a millimetre per second.
-**Settled** then never stops moving, and **Moved** only tells you how long you waited before pressing
-*Record*. So a spot is only good if both hold: no `Moving Vessel` line in `KSP.log`, and a **Settled**
-value that stops moving once the capsule has come to rest.
+⚠️ **And the capsule must not slide.** A landed craft at rest is held in place by the game, but only
+while its throttle is closed. Open it, even by a few percent, even on a capsule with no engine, and
+nothing holds the capsule any more: on a slope it slides slowly downhill, a fraction of a millimetre per
+second, and its height goes down as it slides. **Settled** then never stops moving, and **Moved** only
+tells you how long you waited before pressing *Record*. The throttle stays where you left it: a single
+press of Shift is enough, and only `X` closes it again. So a spot is only good if both hold: no
+`Moving Vessel` line in `KSP.log`, and a **Settled** value that stops moving once the capsule has come
+to rest.
+
+Note that on some of the screenshots of this page, the throttle gauge left of the navball is not at zero:
+they were taken with Shift+Win+S, and its Shift opened the throttle. Take yours with F1 or Print
+Screen, which leave the throttle alone.
 
 **3. Let it settle, and save once.**
 
