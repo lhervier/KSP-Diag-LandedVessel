@@ -123,7 +123,8 @@ same save again, six times in all.
 **The runway and the grass beside it.** Where the first protocol tells you not to go. Two identical
 craft, one on the runway and one on the grass beside it. Load the save while flying the one on the
 grass, press *Record*, switch to the other with the game's own key, and press *Record* again. Then load
-the same save again, six times in all.
+the same save again, six times in all. A second save does the same on the Mun, beside a runway placed
+by Kerbal Konstructs.
 
 **→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
 
@@ -132,7 +133,8 @@ the same save again, six times in all.
 Four series, one per protocol, all taken in the same install: Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
 with this mod added. The first also goes to the Moon and to Earth, in that install with
-[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added.
+[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, and the fourth to the Mun, with
+[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
 
 In all four, **On rails** — the height the game hands the craft back at — barely moves: three
 thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
@@ -170,7 +172,10 @@ downwards.
 loadings on Kerbin, two identical craft 152 m apart. Both are handed back at the same height every
 time, within a thousandth of a millimetre. Both come to rest somewhere else every time: within 88.3 mm
 on the grass, within 130.3 mm on the runway. And not together: the step between them, which is the step
-between the grass and the runway, spreads over 81.7 mm.
+between the grass and the runway, spreads over 81.7 mm. The same on the Mun, beside a runway placed by
+[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): within 24.1 mm on the ground,
+33.5 mm on the runway, 42.9 mm for the step. Whether the game or a mod places it, a structure behaves
+the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
 

@@ -14,6 +14,11 @@ with [the approach protocol](../docs/the-protocol-approach.md),
   on the same grass, and a rover 1.97 km to the south of it.
 - [`runway-kerbin.sfs`](runway-kerbin.sfs) — the save the runway protocol uses: two identical craft,
   one on the grass beside the runway and one on the runway, 152 m apart.
+- [`runway-mun-kk.sfs`](runway-mun-kk.sfs) — the same protocol on the Mun: two identical craft, one on
+  a runway placed by [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) 1.12.3 and one on
+  the ground 42 m away. The runway itself is in the two files of
+  [`runway-mun-kk/GameData/KerbalKonstructs/NewInstances/`](runway-mun-kk/GameData/KerbalKonstructs/NewInstances/):
+  copy that `GameData` into the folder of KSP, over its own, before loading the save.
 
 Copy a save into the folder of a sandbox game and load it from that game.
 
@@ -21,6 +26,8 @@ Copy a save into the folder of a sandbox game and load it from that game.
   switching rounds were taken in.
 - [`runs/runway-stock.log`](runs/runway-stock.log) — the `KSP.log` of the session the six loadings
   of the runway protocol were taken in.
+- [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the `KSP.log` of the session the six
+  loadings on the Mun, beside the runway placed by Kerbal Konstructs, were taken in.
 - [`runs/approach-stock-6cycles.log`](runs/approach-stock-6cycles.log) — the `KSP.log` of the session
   the six round trips were taken in, with an earlier version of the approach save: the same two
   craft, a few metres apart, 1.4 km further east.
