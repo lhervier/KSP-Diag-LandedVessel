@@ -13,7 +13,8 @@ your own install, a claim about the ground your craft is parked on:
 
 > **The ground KSP builds under you is never built at the same height twice.** Load the same save five
 > times, and the surface your craft is standing on comes back a little higher or a little lower each
-> time — a few centimetres apart on Kerbin, less on smaller worlds.
+> time — a few centimetres apart on Kerbin, less on smaller worlds, and up to seventy on Earth in
+> Real Solar System.
 
 ## Why it matters
 
