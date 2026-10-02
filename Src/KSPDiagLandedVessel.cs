@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.github.lhervier.ksp.terrainprecisionfixdiag
+namespace com.github.lhervier.ksp.diag.landedvessel
 {
     /// <summary>
     /// Position recorder. Follows two distances from the centre of the body, in millimetres: the one a
@@ -12,7 +12,7 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag
     /// save several times builds it up line by line.
     /// </summary>
     [KSPAddon(KSPAddon.Startup.Flight, false)]
-    public class TerrainPrecisionFixDiagMod : MonoBehaviour
+    public class KSPDiagLandedVessel : MonoBehaviour
     {
         private static readonly List<Reading> READINGS = new List<Reading>();
 
@@ -138,7 +138,7 @@ namespace com.github.lhervier.ksp.terrainprecisionfixdiag
                 Constants.WINDOW_ID, 
                 windowRect, 
                 DrawWindow, 
-                "Terrain Precision Fix Diag"
+                "KSP Diag - Landed Vessel"
             );
         }
 

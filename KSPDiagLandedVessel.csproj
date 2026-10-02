@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>TerrainPrecisionFixDiagMod</AssemblyName>
-    <RootNamespace>com.github.lhervier.ksp.terrainprecisionfixdiag</RootNamespace>
+    <AssemblyName>KSPDiagLandedVessel</AssemblyName>
+    <RootNamespace>com.github.lhervier.ksp.diag.landedvessel</RootNamespace>
     <OutputType>Library</OutputType>
     <OutputPath>Output\bin</OutputPath>
     <IntermediateOutputPath>Output\obj</IntermediateOutputPath>

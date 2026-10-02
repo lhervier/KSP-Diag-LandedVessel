@@ -1,6 +1,6 @@
 # The measurements: switching to a craft far away
 
-Part of [Terrain Precision Fix Diag 1](../README.md): the readings taken with
+Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the switching protocol](the-protocol-switching.md) — a capsule and a rover landed 1.97 km apart, the
 save loaded while flying the rover, then the game's *switch vessel* key pressed to fly the capsule.
 The other series are in [The measurements: loading the same save](the-measurements-loading.md) and

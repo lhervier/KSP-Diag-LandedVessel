@@ -1,6 +1,6 @@
 # The measurements: coming back to a craft you left
 
-Part of [Terrain Precision Fix Diag 1](../README.md): the readings taken with
+Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the approach protocol](the-protocol-approach.md) — a craft parked on flat ground, a rover driving
 away until the game unloads it, then coming back. Nothing is loaded at any point: from the first line
 to the last, it is one single flight. The other series, on a craft handed back by a save, is in

@@ -1,6 +1,6 @@
 # The protocol: the runway and the grass beside it
 
-Part of [Terrain Precision Fix Diag 1](../README.md): how to take the reading on a craft parked on the
+Part of [KSP Diag - Landed Vessel](../README.md): how to take the reading on a craft parked on the
 runway, where [the loading protocol](the-protocol-loading.md) tells you not to go. The columns it fills
 are in [The window](the-window.md), and what it reads is in
 [The measurements: the runway and the grass beside it](the-measurements-runway.md).

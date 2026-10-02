@@ -1,6 +1,6 @@
 # The protocol: loading the same save
 
-Part of [Terrain Precision Fix Diag 1](../README.md): how to take the reading on a craft that comes
+Part of [KSP Diag - Landed Vessel](../README.md): how to take the reading on a craft that comes
 back with a save, step by step. The columns it fills are in [The window](the-window.md), and what it
 reads is in [The measurements: loading the same save](the-measurements-loading.md).
 

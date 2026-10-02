@@ -1,6 +1,6 @@
 # The window
 
-Part of [Terrain Precision Fix Diag 1](../README.md): the table the mod shows in flight, column by column.
+Part of [KSP Diag - Landed Vessel](../README.md): the table the mod shows in flight, column by column.
 
 In flight, a window shows a table with one line per reading, in millimetres. The **bottom line is the
 reading in progress**: its numbers move as you watch, it carries `--` where the others carry a record

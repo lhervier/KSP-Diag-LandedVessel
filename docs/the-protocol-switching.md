@@ -1,6 +1,6 @@
 # The protocol: switching to a craft far away
 
-Part of [Terrain Precision Fix Diag 1](../README.md): how to take the reading on a craft you switch
+Part of [KSP Diag - Landed Vessel](../README.md): how to take the reading on a craft you switch
 to, without driving anywhere. The columns it fills are in [The window](the-window.md), and what it
 reads is in [The measurements: switching to a craft far away](the-measurements-switching.md).
 

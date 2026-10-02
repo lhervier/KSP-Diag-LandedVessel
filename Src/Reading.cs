@@ -1,4 +1,4 @@
-namespace com.github.lhervier.ksp.terrainprecisionfixdiag
+namespace com.github.lhervier.ksp.diag.landedvessel
 {
     /// <summary>
     /// One line of the table: where the vessel started the scene, and where it is now. Both start

@@ -1,6 +1,6 @@
 # The measurements: loading the same save
 
-Part of [Terrain Precision Fix Diag 1](../README.md): the readings taken with
+Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the loading protocol](the-protocol-loading.md), on the four worlds of stock KSP and on two much
 larger ones, the Moon and Earth of Real Solar System. The other series are in
 [The measurements: coming back to a craft you left](the-measurements-approach.md) and
@@ -140,7 +140,7 @@ loading of the same save was enough:
 **With the component on, the craft can tip over too.** At the third and fifth of the fourteen loadings
 above; and twice more on the same craft saved again at a later load, `reload-moon-rss-resave.sfs`, Real
 Solar System as released: at the first loading of one session, and at the fourth of the six loadings
-[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/blob/master/docs/the-measurements-loading.md#the-readings)
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight/blob/master/docs/the-measurements-loading.md#the-readings)
 measured on the Moon. Each time, `KSP.log` shows the component running
 (`[RSS-VGPE] CheckGroundCollision()`) and no `Moving Vessel` line: the craft came back less than
 10 cm off the ground, and the pass left it where it was. Here is the third of the fourteen loadings,
@@ -160,8 +160,8 @@ block, onto a ground that came back somewhere else.
 
 The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system); the session of the
 first tip-over with the component on, in `reload-moon-rss-stock-tipped.log`, and the six loadings of
-Diag 2 on the Moon in
-[Diag 2's `diag/runs`](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2/tree/master/diag/runs),
+Diag TerrainHeight on the Moon in
+[Diag TerrainHeight's `diag/runs`](https://github.com/lhervier/KSP-Diag-TerrainHeight/tree/master/diag/runs),
 file `reload-moon-rss-stock.log`.
 
 ## What the numbers say

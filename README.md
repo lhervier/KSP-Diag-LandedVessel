@@ -1,4 +1,4 @@
-# Terrain Precision Fix - Diagnostic Mod 1
+# KSP Diag - Landed Vessel
 
 **⚠️ Work in progress.** This is an active investigation, not a finished mod. The figures, the code and the conclusions on this page can still change, and several questions are still open.
 
@@ -79,7 +79,7 @@ nothing about the craft itself has changed. One of them does vary.
 Both readings are of the **craft**, and that is where the instrument stops: it does not, on its own,
 name what moved. A ground rebuilt a little higher or a little lower at every loading accounts for the
 figures, but so would a perfectly steady ground with the craft set down beside it. A second instrument,
-[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2), tells the two
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), tells the two
 apart: it measures the ground itself, with no craft in the picture at all.
 
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
@@ -182,21 +182,21 @@ the same.
 
 ## Get it
 
-Either way you end up with the same `GameData/TerrainPrecisionFixDiagMod/` folder.
+Either way you end up with the same `GameData/KSPDiagLandedVessel/` folder.
 
 **Download it** — from the assets of the
-[latest release](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag/releases/latest).
+[latest release](https://github.com/lhervier/KSP-Diag-LandedVessel/releases/latest).
 
 **Or compile it** — clone this repository, set `KSPDIR` to your KSP install folder and run
 `build.bat`. It needs the .NET SDK, takes a few seconds, reads the KSP assemblies straight from
-your install, and puts the DLL in `GameData/TerrainPrecisionFixDiagMod/` inside the repository. It
+your install, and puts the DLL in `GameData/KSPDiagLandedVessel/` inside the repository. It
 does not install anything. Worth doing if you would rather not run a binary you have no source for
 while reporting a measurement.
 
 ## Install
 
-Drop `GameData/TerrainPrecisionFixDiagMod` into the `GameData` of KSP, so that you end up with
-`GameData/TerrainPrecisionFixDiagMod/TerrainPrecisionFixDiagMod.dll`. It runs on a stock install.
+Drop `GameData/KSPDiagLandedVessel` into the `GameData` of KSP, so that you end up with
+`GameData/KSPDiagLandedVessel/KSPDiagLandedVessel.dll`. It runs on a stock install.
 
 ## License
 

@@ -1,6 +1,6 @@
 # The protocol: coming back to a craft you left
 
-Part of [Terrain Precision Fix Diag 1](../README.md): how to take the reading on a craft that is
+Part of [KSP Diag - Landed Vessel](../README.md): how to take the reading on a craft that is
 loaded into a scene already running, step by step. Nothing is loaded here — from the first line to
 the last, it is one single flight. The columns it fills are in [The window](the-window.md), and what
 it reads is in [The measurements: coming back to a craft you left](the-measurements-approach.md).

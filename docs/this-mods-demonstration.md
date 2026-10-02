@@ -1,6 +1,6 @@
 # This mod's demonstration
 
-Part of [Terrain Precision Fix Diag 1](../README.md): what the mod reads, why those two numbers are enough, and what they cannot tell on their own.
+Part of [KSP Diag - Landed Vessel](../README.md): what the mod reads, why those two numbers are enough, and what they cannot tell on their own.
 
 You cannot look at the ground and see this: the surface you walk on and the surface you see are one
 and the same, so the picture shifts along with it. What you can see is what rests *on* the ground. So
@@ -40,7 +40,7 @@ down beside it, off by a rounding error shared by the placement and by the **On 
 it would cancel out. Both fill the same table.
 
 A second instrument,
-[Terrain Precision Fix Diag 2](https://github.com/lhervier/KSP-TerrainPrecisionFixDiag2), tells the
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), tells the
 two apart: it measures **the ground** itself — the height of the surface your craft is touching,
 against the height the game computes for that same spot — with no craft in the picture at all. You do
 not need it to follow these readings.
