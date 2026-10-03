@@ -189,16 +189,7 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             );
             if (GUILayout.Button("Record", GUILayout.Width(Constants.COL_BUTTON)))
             {
-                // A line with nothing to read is worth freezing too: recorded while the vessel is out
-                // of reach, it marks in the table that the two lines around it are separated by a real
-                // trip away, and not by two readings taken where the player stood.
-                READINGS.Add(
-                    new Reading
-                    {
-                        OnRailsMm = live.OnRailsMm,
-                        SettledMm = live.SettledMm
-                    }
-                );
+                Record();
             }
             GUILayout.EndHorizontal();
 
@@ -206,11 +197,60 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             GUILayout.Space(10f);
             if (GUILayout.Button("Clear table"))
             {
-                READINGS.Clear();
+                Clear();
             }
 
             GUILayout.EndVertical();
             GUI.DragWindow();
+        }
+
+        /// <summary>
+        /// Freezes the line in progress into the table, as the Record button does, and returns the line
+        /// recorded.
+        /// </summary>
+        internal Reading Record()
+        {
+            // A line with nothing to read is worth freezing too: recorded while the vessel is out of reach,
+            // it marks in the table that the two lines around it are separated by a real trip away, and
+            // not by two readings taken where the player stood.
+            Reading reading = new Reading
+            {
+                OnRailsMm = live.OnRailsMm,
+                SettledMm = live.SettledMm
+            };
+            READINGS.Add(reading);
+            return reading;
+        }
+
+        /// <summary>Empties the table, as the Clear table button does.</summary>
+        internal void Clear()
+        {
+            READINGS.Clear();
+        }
+
+        /// <summary>The recorded lines, oldest first.</summary>
+        internal IList<Reading> Lines
+        {
+            get { return READINGS; }
+        }
+
+        /// <summary>The line in progress.</summary>
+        internal Reading Live
+        {
+            get { return live; }
+        }
+
+        /// <summary>What the window says about the craft the readings are about.</summary>
+        internal string Subject
+        {
+            get { return subjectLabel; }
+        }
+
+        /// <summary>Where the window is on the screen, and how big.</summary>
+        internal Rect WindowRect
+        {
+            get { return windowRect; }
+            set { windowRect = value; }
         }
 
         /// <summary>Draws the four columns of one line. The caller owns the surrounding horizontal group,
