@@ -5,7 +5,7 @@ Part of [KSP Diag - Landed Vessel](../README.md): the table the mod shows in fli
 In flight, a window shows a table with one line per reading, in millimetres. The **bottom line is the
 reading in progress**: its numbers move as you watch, it carries `--` where the others carry a record
 number, and the *Record* button at the end of it freezes it into the table. The table survives scene
-changes, so the lines pile up as you reload.
+changes, so the lines pile up as you reload. `Alt+F6` hides the window, and shows it again.
 
 ![Mod's Window](../imgs/window.png)
 

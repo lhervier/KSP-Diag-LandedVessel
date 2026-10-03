@@ -32,8 +32,17 @@ namespace com.github.lhervier.ksp.diag.landedvessel
         // craft has been handed to physics.
         private readonly Dictionary<Guid, double> onRailsByVessel = new Dictionary<Guid, double>();
 
+        // Mod+F6 shows or hides the window, the same key for every KSP Diag. Static: the choice holds from one
+        // flight scene to the next.
+        private static readonly KeyBinding WINDOW_KEY = new KeyBinding(KeyCode.F6);
+        private static bool windowVisible = true;
+
         private void Update()
         {
+            if (GameSettings.MODIFIER_KEY.GetKey() && WINDOW_KEY.GetKeyDown())
+            {
+                windowVisible = !windowVisible;
+            }
             TrackOnRailsDistances();
 
             Vessel vessel = SelectSubject(out subjectLabel);
@@ -133,6 +142,10 @@ namespace com.github.lhervier.ksp.diag.landedvessel
 
         private void OnGUI()
         {
+            if (!windowVisible)
+            {
+                return;
+            }
             GUI.skin = HighLogic.Skin;
             windowRect = GUILayout.Window(
                 Constants.WINDOW_ID, 
