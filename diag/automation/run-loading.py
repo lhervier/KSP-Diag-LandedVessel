@@ -8,7 +8,7 @@ Terrain Height or both installed, copy the save into a sandbox game, wait for th
 
 For each loading it does what the protocol asks a player to do, in the same order: load the save, wait for the
 digits to stop moving, record. Every instrument installed records at every loading. It never saves the game.
-At the end it takes a screenshot of the table, prints what it read, writes it to lines.json, and quits KSP
+At the end it takes a screenshot of each table, that window alone, prints what it read, writes it to lines.json, and quits KSP
 (unless --keep-running is given).
 """
 import argparse
@@ -71,13 +71,28 @@ def wait_for_digits_to_settle(instrument):
         time.sleep(0.5)
 
 
+def screenshots(directory, name, instruments, width):
+    """One screenshot per table, each window alone in the middle of the screen."""
+    off_screen = -3000
+    for shown in instruments:
+        for hidden in instruments:
+            if hidden != shown:
+                call(hidden + "_move_window", x=off_screen, y=60)
+        size = call(shown + "_move_window", x=0, y=60)
+        call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
+        call("wait", seconds=1)
+        call("screenshot", path=os.path.join(os.path.abspath(directory), "%s-%s.png" % (name, shown)),
+             return_image=False)
+
+
 def main():
     global URL
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--folder", required=True, help="the sandbox game under saves/ the save was copied into")
     parser.add_argument("--save", required=True, help="the save, without .sfs")
     parser.add_argument("--loads", type=int, default=6, help="how many loadings")
-    parser.add_argument("--out", default="out", help="where lines.json and the screenshot go")
+    parser.add_argument("--out", default="out", help="where lines.json and the screenshots go")
+    parser.add_argument("--screen-width", type=float, default=1280, help="the width of KSP's window, in pixels")
     parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
     parser.add_argument("--keep-running", action="store_true", help="leave KSP running at the end")
     options = parser.parse_args()
@@ -109,7 +124,7 @@ def main():
             parts.append("Ground under craft %14.3f mm" % row["terrainheight"]["CollisionSurfaceMm"])
         log("  load %d  %s" % (load, "  ".join(parts)))
 
-    call("screenshot", path=os.path.join(os.path.abspath(options.out), options.save + ".png"), return_image=False)
+    screenshots(options.out, options.save, instruments, options.screen_width)
     with open(os.path.join(options.out, "lines.json"), "w", newline="") as f:
         json.dump(rows, f, indent=1)
     log("done")

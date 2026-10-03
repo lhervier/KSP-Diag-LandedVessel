@@ -8,8 +8,9 @@ Python 3: no AI, no package to install. Start KSP with KSP-MCPServer, KSP Diag -
 
 For each loading it does what the protocol asks a player to do, in the same order: load the save, wait for
 the digits to stop moving, record on the craft being flown, switch to the other craft as the [ key does,
-wait, record again. Both instruments record at every stop. It prints what it read, writes it to lines.json,
-and quits KSP (unless --keep-running is given).
+wait, record again. Both instruments record at every stop. At the end it takes a screenshot of each table,
+that window alone. It prints what it read, writes it to lines.json, and quits KSP (unless --keep-running is
+given).
 """
 import argparse
 import json
@@ -65,13 +66,28 @@ def record(load, craft, rows):
         % (load, craft, landed["SettledMm"], landed["MovedMm"], terrain["CollisionSurfaceMm"]))
 
 
+def screenshots(directory, name, instruments, width):
+    """One screenshot per table, each window alone in the middle of the screen."""
+    off_screen = -3000
+    for shown in instruments:
+        for hidden in instruments:
+            if hidden != shown:
+                call(hidden + "_move_window", x=off_screen, y=60)
+        size = call(shown + "_move_window", x=0, y=60)
+        call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
+        call("wait", seconds=1)
+        call("screenshot", path=os.path.join(os.path.abspath(directory), "%s-%s.png" % (name, shown)),
+             return_image=False)
+
+
 def main():
     global URL
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--folder", required=True, help="the sandbox game under saves/ the save was copied into")
     parser.add_argument("--save", default="runway-kerbin", help="the save, without .sfs")
     parser.add_argument("--loads", type=int, default=6, help="how many loadings")
-    parser.add_argument("--out", default="out", help="where lines.json goes")
+    parser.add_argument("--out", default="out", help="where lines.json and the screenshots go")
+    parser.add_argument("--screen-width", type=float, default=1280, help="the width of KSP's window, in pixels")
     parser.add_argument("--port", type=int, default=8770, help="the port of KSP-MCPServer")
     parser.add_argument("--keep-running", action="store_true", help="leave KSP running at the end")
     options = parser.parse_args()
@@ -102,6 +118,7 @@ def main():
         wait_for_digits_to_settle()
         record(load, "runway", rows)
 
+    screenshots(options.out, options.save, ["landedvessel", "terrainheight"], options.screen_width)
     with open(os.path.join(options.out, "lines.json"), "w", newline="") as f:
         json.dump(rows, f, indent=1)
     log("done")
