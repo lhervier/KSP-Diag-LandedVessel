@@ -138,7 +138,7 @@ with this mod added. The first also goes to the Moon and to Earth, in that insta
 [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
 
 In all four, **On rails** — the height the game hands the craft back at — barely moves: two
-thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
+thousandths of a millimetre at most from one loading to the next in the first series, one thousandth
 across a round trip in the second, one thousandth across six loadings in the third, one thousandth in
 the fourth. So the craft itself is put back where it was.
 What it then comes to rest on is never quite where it was.
@@ -157,7 +157,7 @@ it tipped over four times with the workaround running.
 
 **Coming back to a craft you left** ([the protocol in full](docs/the-protocol-approach.md)). Six
 round trips in a row on Kerbin, in a single flight, with nothing loaded at any point: the craft comes
-to rest 7.5 to 19.2 mm from the height it was handed back at, upwards as often as downwards, and a
+to rest 6.6 to 37.2 mm from the height it was handed back at, upwards as often as downwards, and a
 different amount every time.
 
 **→ Full chapter: [The measurements: coming back to a craft you left](docs/the-measurements-approach.md)**

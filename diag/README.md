@@ -81,9 +81,10 @@ Copy a save into the folder of a sandbox game and load it from that game.
   of the runway protocol were taken in.
 - [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the `KSP.log` of the session the six
   loadings on the Mun, beside the runway placed by Kerbal Konstructs, were taken in.
-- [`runs/approach-stock-6cycles.log`](runs/approach-stock-6cycles.log) — the `KSP.log` of the session
-  the six round trips were taken in, with an earlier version of the approach save: the same two
-  craft, a few metres apart, 1.4 km further east.
+- [`runs/approach-stock.log`](runs/approach-stock.log) — the `KSP.log` of the session the six round
+  trips were played in by `run-approach.py`, with KSP Diag - Terrain Height and KSP-MCPServer installed;
+  what the script printed in [`runs/approach-stock-script.txt`](runs/approach-stock-script.txt), and
+  every line it recorded in [`runs/approach-stock-lines.json`](runs/approach-stock-lines.json).
 - [`runs/approach-diag1-stock.log`](runs/approach-diag1-stock.log) — the `KSP.log` of an earlier
   session, kept for the record: its round trips stayed within range of the parked craft, so the game
   never unloaded it and there was nothing to read.

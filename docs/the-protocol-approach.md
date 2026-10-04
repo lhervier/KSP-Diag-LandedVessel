@@ -95,3 +95,29 @@ into the save, and the next reading would be taken against that instead of the o
 
 **Then do it again.** One round trip says nothing: the size of the reading is not the same twice, and
 a round trip can come back within a millimetre. It is the series that is worth reading, not a line.
+
+## Played by a script
+
+[`diag/automation/run-approach.py`](../diag/automation/run-approach.py) plays the protocol above,
+round trip after round trip, and takes the screenshots. It drives KSP through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
+HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
+install. Anyone can read it top to bottom: it follows the steps above in the same order.
+
+1. Install KSP-MCPServer next to this mod and [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight): the
+   script records in both windows at the same moment, and waits on the reading of Diag TerrainHeight
+   to know the parked craft has settled. Copy the save into a sandbox game, start KSP and wait for the
+   main menu.
+2. Run `python run-approach.py --folder <your sandbox game> --trips 6 --out screenshots`.
+
+It loads the save once and never changes scene. It first turns on the cheat *Infinite Electricity*
+(`Alt+F12`), for the rover: six round trips of more than six kilometres empty its batteries faster
+than its panels fill them; it changes nothing on the parked craft. Then, for each round trip, it
+records beside the craft; drives south to about 700 m and records; on to about 2600 m, out of range,
+and records the empty line; on beyond 3 km, turns round, drives back to 2000 m and records; then back
+to the rover's starting spot, waits four seconds and for the digits to stop moving (within half a
+thousandth of a millimetre over two seconds), and records. After each round trip it takes a screenshot
+of each table and clears both, so that each screenshot holds one round trip. It prints every line it
+records, writes them to `lines.json` next to the screenshots, and quits KSP at the end — give it
+`--keep-running` to leave KSP open. Save `KSP.log` before starting KSP again: KSP writes it anew at
+every start.
