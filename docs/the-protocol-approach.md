@@ -21,7 +21,7 @@ west of the KSC:
   them.
 
 You can of course build your own two craft instead. The parked one must meet the same conditions as
-[the capsule of the loading protocol](the-protocol-loading.md): flat ground, no suspension, nothing that needs
+[the craft of the loading protocol](the-protocol-loading.md): flat ground, no suspension, nothing that needs
 a slope to move on its own.
 
 ## The distances that decide everything

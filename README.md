@@ -100,7 +100,7 @@ itself put the craft back onto the ground, nor a jump or a tip-over.
 Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
 runway, which is not the ground. All four fill the same window, and come with their craft and save.
 
-**Loading the same save.** Set a lone capsule down on bare, flat ground, save once, then load that
+**Loading the same save.** Set a capsule on a small tank down on bare, flat ground, save once, then load that
 same save six times, recording after each loading.
 
 **→ Full chapter: [The protocol: loading the same save](docs/the-protocol-loading.md)**
@@ -132,7 +132,7 @@ is not.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). On the four stock
 worlds, then on the Moon and Earth of Real Solar System. The height the craft comes to rest at is never
-the same twice: up to 73.7 mm apart on Kerbin, 292.4 mm on Earth.
+the same twice: up to 43.7 mm apart on Kerbin, 292.4 mm on Earth.
 
 **→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
 

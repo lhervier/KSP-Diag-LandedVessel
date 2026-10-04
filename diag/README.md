@@ -13,17 +13,14 @@ readings say is in
 
 ## The saves of the loading protocol
 
-A lone capsule, then the same capsule on a small flat fuel tank, each landed on its own spot of the four
-worlds of stock KSP, made by steps 1 to 3 of [the protocol](../docs/the-protocol-loading.md):
+A capsule on a small flat fuel tank, landed on its own spot of each of the four worlds of stock KSP,
+made by steps 1 to 3 of [the protocol](../docs/the-protocol-loading.md):
 
-- [`reload-kerbin-1part.sfs`](reload-kerbin-1part.sfs) and [`reload-kerbin-2parts.sfs`](reload-kerbin-2parts.sfs)
-  — on the levelled grass of the KSC, just south-west of the west end of the runway;
-- [`reload-mune-1part.sfs`](reload-mune-1part.sfs) and [`reload-mune-2parts.sfs`](reload-mune-2parts.sfs)
-  — on flat ground on the Mun;
-- [`reload-minmus-1part.sfs`](reload-minmus-1part.sfs) and [`reload-minmus-2parts.sfs`](reload-minmus-2parts.sfs)
-  — on the frozen flats of Minmus;
-- [`reload-gilly-1part.sfs`](reload-gilly-1part.sfs) and [`reload-gilly-2parts.sfs`](reload-gilly-2parts.sfs)
-  — on Gilly.
+- [`reload-kerbin-2parts.sfs`](reload-kerbin-2parts.sfs) — on the levelled grass of the KSC, just
+  south-west of the west end of the runway;
+- [`reload-mune-2parts.sfs`](reload-mune-2parts.sfs) — on flat ground on the Mun;
+- [`reload-minmus-2parts.sfs`](reload-minmus-2parts.sfs) — on the frozen flats of Minmus;
+- [`reload-gilly-2parts.sfs`](reload-gilly-2parts.sfs) — on Gilly.
 
 On the Moon and on Earth, in Real Solar System, the saves are
 [`reload-moon-rss.sfs`](reload-moon-rss.sfs), [`reload-moon-rss-resave.sfs`](reload-moon-rss-resave.sfs),
@@ -48,11 +45,12 @@ alone; how to run it is at the top of the file, and in the chapter *Played by a 
 KSP 1.12.5 with Harmony, ModuleManager, KSP Community Fixes 1.41.1, this mod,
 KSP Diag - Terrain Height and KSP-MCPServer, every save played by `run-loading.py`, six loadings each.
 
-- [`runs/loading-stock.log`](runs/loading-stock.log) — the `KSP.log` of the session the eight saves
-  above were played in, one after the other.
-- `runs/reload-<world>-<1part|2parts>-stock-script.txt` — what the script printed for each save, and
-  `runs/reload-<world>-<1part|2parts>-stock-lines.json`, every line it recorded, in both instruments:
-  for instance [`runs/reload-kerbin-1part-stock-lines.json`](runs/reload-kerbin-1part-stock-lines.json).
+- [`runs/loading-stock.log`](runs/loading-stock.log) — the `KSP.log` of the session the four saves
+  above were played in, one after the other, together with a lone capsule on the same spots, a series
+  no longer published.
+- `runs/reload-<world>-2parts-stock-script.txt` — what the script printed for each save, and
+  `runs/reload-<world>-2parts-stock-lines.json`, every line it recorded, in both instruments:
+  for instance [`runs/reload-kerbin-2parts-stock-lines.json`](runs/reload-kerbin-2parts-stock-lines.json).
 - [`runs/loading-rss-stock.log`](runs/loading-rss-stock.log) — on Real Solar System (see
   [On Real Solar System](#on-real-solar-system)): the session `reload-moon-rss-resave.sfs` then
   `reload-earth-rss-resave.sfs` were played in; what the script printed and the lines it recorded, in

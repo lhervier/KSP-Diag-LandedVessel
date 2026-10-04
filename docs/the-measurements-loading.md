@@ -27,59 +27,40 @@ session per install, every save of it loaded six times in a row, a *Record* in b
 loading, and a screenshot of the table after the sixth. The saves are in [`diag`](../diag/README.md#the-saves-of-the-loading-protocol);
 the sessions, what the script printed and every line it recorded, in [`diag/runs`](../diag/README.md#the-runs-of-the-loading-protocol).
 
-## One capsule
+## The readings
 
-That is the whole demonstration, and it fits in one screenshot. Here is the same save, on Kerbin,
-`reload-kerbin-1part.sfs`, a lone capsule on the levelled grass of the KSC, loaded six times:
+That is the whole demonstration, and it fits in one screenshot. Here is the same save on Kerbin,
+`reload-kerbin-2parts.sfs`, a capsule sitting on a small flat fuel tank on the levelled grass of the KSC,
+loaded six times:
 
-![Six loadings of the same save, on Kerbin](../imgs/measures/reload/1part/00-kerbin.png)
+![Six loadings of the same save, on Kerbin](../imgs/measures/reload/2parts/00-kerbin.png)
 
 The bottom line is the loading in progress, not a seventh one: after the sixth *Record*, it keeps
 showing that same sixth loading, still live.
 
-The same value in **On rails**, six times over: KSP handed the capsule back in exactly the same
-place, every single time. Never a zero in **Moved**: on all six, the ground turned out to be
-somewhere else. Sometimes lower, and the capsule dropped onto it; sometimes higher, and it got pushed
-back out.
+The same value in **On rails**, six times over: KSP handed the craft back in exactly the same place,
+every single time. Never the same value in **Moved**: on all six, the ground turned out to be somewhere
+else, here higher every time, by a different amount, and the craft was pushed back out onto it.
 
-The same lone capsule, the same loadings of one save, done again on the Mun, on flat ground, on the
-frozen flats of Minmus, and on Gilly — the smallest place there is to stand on:
+The craft has two parts on purpose. KSP treats a craft made of a single part apart: it puts it back
+onto the ground itself at every loading (see [the protocol](the-protocol-loading.md)). With two parts,
+it leaves the craft where the save put it — except on Real Solar System, below — and what the craft does
+is the ground's doing alone.
 
-![Loadings of the same save, on the Mun](../imgs/measures/reload/1part/10-mune.png)
+The same craft, the same loadings of one save, done again on the Mun, on flat ground, on the frozen
+flats of Minmus, on Gilly — the smallest place there is to stand on — and on the Moon and Earth of Real
+Solar System: on flat ground on the Moon, `reload-moon-rss-resave.sfs`, and on the grass about 1.4 km
+west of the KSC on Earth, `reload-earth-rss-resave.sfs`.
 
-![Loadings of the same save, on Minmus](../imgs/measures/reload/1part/20-minmus.png)
+![Six loadings of the same save, on the Mun](../imgs/measures/reload/2parts/10-mune.png)
 
-![Loadings of the same save, on Gilly](../imgs/measures/reload/1part/30-gilly.png)
+![Six loadings of the same save, on Minmus](../imgs/measures/reload/2parts/20-minmus.png)
 
-| loading | Kerbin — **Moved** (mm) | Mun — **Moved** (mm) | Minmus — **Moved** (mm) | Gilly — **Moved** (mm) |
-|---|---|---|---|---|
-| 1 | +33.012 | +4.714 | +2.658 | −0.537 |
-| 2 | −16.245 | +5.860 | +2.314 | −1.105 |
-| 3 | −29.245 | +9.382 | +2.276 | −0.435 |
-| 4 | +7.792 | +9.183 | +0.755 | −0.674 |
-| 5 | −7.486 | +4.083 | −1.916 | +0.281 |
-| 6 | +44.482 | +3.791 | +0.413 | −0.425 |
-| **lowest to highest** | **73.7 mm** | **5.6 mm** | **4.6 mm** | **1.4 mm** |
+![Six loadings of the same save, on Gilly](../imgs/measures/reload/2parts/30-gilly.png)
 
-## The same craft, with two parts
+![Six loadings of the same save, on the Moon](../imgs/measures/reload/2parts/40-moon.png)
 
-A craft made of a single part is a special case for KSP (see [the protocol](the-protocol-loading.md)).
-So the whole campaign was run again with a two-part craft: the same capsule, sitting on a small flat
-fuel tank, on the same spot as the lone capsule on each of the four worlds. The Moon and Earth were
-measured with this craft only: on flat ground on the Moon, `reload-moon-rss-resave.sfs`, and on the
-grass about 1.4 km west of the KSC on Earth, `reload-earth-rss-resave.sfs`.
-
-![Two parts, on Kerbin](../imgs/measures/reload/2parts/00-kerbin.png)
-
-![Two parts, on the Mun](../imgs/measures/reload/2parts/10-mune.png)
-
-![Two parts, on Minmus](../imgs/measures/reload/2parts/20-minmus.png)
-
-![Two parts, on Gilly](../imgs/measures/reload/2parts/30-gilly.png)
-
-![Two parts, on the Moon](../imgs/measures/reload/2parts/40-moon.png)
-
-![Two parts, on Earth](../imgs/measures/reload/2parts/50-earth.png)
+![Six loadings of the same save, on Earth](../imgs/measures/reload/2parts/50-earth.png)
 
 | loading | Kerbin — **Moved** (mm) | Mun — **Moved** (mm) | Minmus — **Moved** (mm) | Gilly — **Moved** (mm) | the Moon — **Moved** (mm) | Earth — **Moved** (mm) |
 |---|---|---|---|---|---|---|
@@ -184,14 +165,12 @@ file `reload-moon-rss-stock.log`.
 
 ## What the numbers say
 
-**On rails** gives the same digits on every line of every series, on the six bodies, with one exception
-of two thousandths of a millimetre: with one part, the first loading on Gilly reads two thousandths
-above the five others. So everywhere, KSP handed the craft back where the save says it was.
+**On rails** gives the same digits on every line of every series, on the six bodies. So everywhere,
+KSP handed the craft back where the save says it was.
 
 **Settled** did not come back once. On every body, the craft came to rest at a height that changed from
-one loading to the next: 1.4 and 2.3 mm on Gilly (one part, two parts), 4.6 and 7.3 mm on Minmus,
-5.6 and 18.2 mm on the Mun, 73.7 and 43.7 mm on Kerbin, then 49.2 mm on the Moon of Real Solar System
-and 292.4 mm on its Earth. Six loadings are few, and they do not rank the worlds one by one — on the
+one loading to the next: 2.3 mm on Gilly, 7.3 mm on Minmus, 18.2 mm on the Mun, 43.7 mm on Kerbin,
+then 49.2 mm on the Moon of Real Solar System and 292.4 mm on its Earth. Six loadings are few, and they do not rank the worlds one by one — on the
 Moon, all six happened to fall within five centimetres — but from Gilly to Earth the spread grows by two
 orders of magnitude. Smaller world, smaller spread, but never none.
 
