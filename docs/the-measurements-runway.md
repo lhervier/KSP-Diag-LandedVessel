@@ -15,9 +15,14 @@ The save the protocol uses is [`diag/runway-kerbin.sfs`](../diag/runway-kerbin.s
 ## The install
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
-[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1 and this mod, and
-nothing else. For the Mun, [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) 1.12.3 is
-added, with CustomPreLaunchChecks 1.8.1, which it requires.
+[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), which reads the ground
+under the same craft at the same moments, and [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), which plays the
+protocol, and nothing else. For the Mun, [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs)
+1.12.3 is added, with CustomPreLaunchChecks 1.8.1, which it requires.
+
+Both series were played by [the script of the protocol](the-protocol-runway.md#played-by-a-script),
+`run-runway.py`, one session each.
 
 ## The readings
 
@@ -33,49 +38,49 @@ on the runway. **Settled**, in millimetres, and the step between the two craft:
 
 | loading | on the grass | on the runway | **step**: runway minus grass |
 |---|---|---|---|
-| 1 | 600,065,136.222 | 600,069,424.941 | 4,288.719 |
-| 2 | 600,065,047.966 | 600,069,339.381 | 4,291.415 |
-| 3 | 600,065,134.857 | 600,069,413.261 | 4,278.404 |
-| 4 | 600,065,118.295 | 600,069,469.656 | 4,351.361 |
-| 5 | 600,065,109.776 | 600,069,379.479 | 4,269.703 |
-| 6 | 600,065,104.880 | 600,069,399.786 | 4,294.906 |
-| **lowest to highest** | **88.3 mm** | **130.3 mm** | **81.7 mm** |
+| 1 | 600,065,104.439 | 600,069,385.929 | 4,281.491 |
+| 2 | 600,065,078.291 | 600,069,373.988 | 4,295.697 |
+| 3 | 600,065,139.839 | 600,069,439.174 | 4,299.336 |
+| 4 | 600,065,109.983 | 600,069,398.772 | 4,288.789 |
+| 5 | 600,065,050.310 | 600,069,322.370 | 4,272.059 |
+| 6 | 600,065,083.583 | 600,069,394.167 | 4,310.584 |
+| **lowest to highest** | **89.5 mm** | **116.8 mm** | **38.5 mm** |
 
-In *Moved*, the craft on the grass goes from −18.707 to +69.549 mm, the craft on the runway from −47.685
-to +82.590 mm.
+In *Moved*, the craft on the grass goes from −16.362 to +73.166 mm, the craft on the runway from −64.696
+to +52.109 mm.
 
 **On the Mun**, a runway placed by Kerbal Konstructs and the ground 42 m from it:
 
 ![Six loadings on the Mun, the craft on the ground then the craft on the runway placed by Kerbal Konstructs](../imgs/measures/runway/six-loads-mun-kk.png)
 
-**On rails** reads 204,123,943.054 mm on the ground at all six loadings, and 204,123,079.402 or .403 mm
+**On rails** reads 204,123,943.054 mm on the ground at all six loadings, and 204,123,079.402 to .404 mm
 on the runway. **Settled**, in millimetres, and the step between the two craft:
 
 | loading | on the ground | on the runway | **step**: runway minus ground |
 |---|---|---|---|
-| 1 | 204,123,878.676 | 204,123,088.463 | −790.213 |
-| 2 | 204,123,896.760 | 204,123,063.620 | −833.140 |
-| 3 | 204,123,872.632 | 204,123,060.238 | −812.394 |
-| 4 | 204,123,878.027 | 204,123,054.955 | −823.072 |
-| 5 | 204,123,886.487 | 204,123,059.235 | −827.252 |
-| 6 | 204,123,881.060 | 204,123,059.809 | −821.251 |
-| **lowest to highest** | **24.1 mm** | **33.5 mm** | **42.9 mm** |
+| 1 | 204,123,862.511 | 204,123,068.484 | −794.028 |
+| 2 | 204,123,880.811 | 204,123,050.799 | −830.012 |
+| 3 | 204,123,885.042 | 204,123,067.278 | −817.765 |
+| 4 | 204,123,871.786 | 204,123,058.734 | −813.052 |
+| 5 | 204,123,888.413 | 204,123,068.358 | −820.055 |
+| 6 | 204,123,883.721 | 204,123,061.701 | −822.020 |
+| **lowest to highest** | **25.9 mm** | **17.7 mm** | **36.0 mm** |
 
-In *Moved*, the craft on the ground goes from −70.422 to −46.294 mm, the craft on the runway from
-−24.447 to +9.061 mm.
+In *Moved*, the craft on the ground goes from −80.543 to −54.641 mm, the craft on the runway from
+−28.604 to −10.921 mm.
 
 ## What these readings show
 
 **The game hands all four craft back at the same height every time.** *On rails* does not move by more
-than a thousandth of a millimetre on any of them, on Kerbin or on the Mun.
+than two thousandths of a millimetre on any of them, on Kerbin or on the Mun.
 
 **All four come to rest somewhere else every time.** On Kerbin, the craft on the grass settles anywhere
-within 88.3 mm, as in [the loading series](the-measurements-loading.md), and the craft on the runway
-within 130.3 mm. On the Mun, 24.1 mm on the ground and 33.5 mm on the runway: smaller, as the Mun is
+within 89.5 mm, as in [the loading series](the-measurements-loading.md), and the craft on the runway
+within 116.8 mm. On the Mun, 25.9 mm on the ground and 17.7 mm on the runway: smaller, as the Mun is
 in the loading series too. Standing on a runway deck rather than on the terrain changes nothing to that.
 
 **The runway and the ground do not move together.** The step between the two craft is never the same
-twice: it spreads over 81.7 mm on Kerbin, 42.9 mm on the Mun. On Kerbin both craft stand on flat
+twice: it spreads over 38.5 mm on Kerbin, 36.0 mm on the Mun. On Kerbin both craft stand on flat
 ground, and the step, 4.3 m, is the height of the runway deck above the grass. On the Mun the ground
 slopes, and the step is not the height of the deck. Either way, it is the same two craft on the same two
 spots at every loading: if the runway kept the same height relative to the ground next to it, that
@@ -92,7 +97,11 @@ applies to these readings word for word.
 ## The logs
 
 [`diag/runs/runway-stock.log`](../diag/runs/runway-stock.log) — the `KSP.log` of the session the six
-loadings on Kerbin were taken in.
+loadings on Kerbin were taken in; what the script printed is in
+[`runway-stock-script.txt`](../diag/runs/runway-stock-script.txt), and every line it recorded, in both
+instruments, in [`runway-stock-lines.json`](../diag/runs/runway-stock-lines.json).
 
 [`diag/runs/runway-mun-kk-stock.log`](../diag/runs/runway-mun-kk-stock.log) — the `KSP.log` of the
-session the six loadings on the Mun were taken in.
+session the six loadings on the Mun were taken in; what the script printed is in
+[`runway-mun-kk-stock-script.txt`](../diag/runs/runway-mun-kk-stock-script.txt), and every line it
+recorded in [`runway-mun-kk-stock-lines.json`](../diag/runs/runway-mun-kk-stock-lines.json).

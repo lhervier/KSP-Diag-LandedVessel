@@ -139,3 +139,25 @@ One loading says nothing on its own: it is the series that is worth reading, not
 
 On the Mun, do the same with [`runway-mun-kk.sfs`](../diag/runway-mun-kk.sfs), the craft on the ground
 taking the place of the one on the grass.
+
+## Played by a script
+
+[`diag/automation/run-runway.py`](../diag/automation/run-runway.py) plays the protocol above, step for
+step, and takes the screenshot. It drives KSP through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
+HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
+install. Anyone can read it top to bottom: it follows the three steps above in the same order.
+
+1. Install KSP-MCPServer next to this mod and [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight): the
+   script records in both windows at the same moment. Copy the save into a sandbox game, start KSP and
+   wait for the main menu.
+2. Run `python run-runway.py --folder <your sandbox game> --loads 6 --out screenshots`. On the Mun, add
+   `--save runway-mun-kk`, with Kerbal Konstructs and its runway installed as said above.
+
+For each loading, it loads the save, waits three seconds and for **Settled** to stop moving (within
+half a thousandth of a millimetre over two seconds), and records on the craft the save opens on; then
+it switches to the other craft, as the switch vessel key does, waits four seconds and for the digits
+to stop moving again, and records. It never saves the game. After the last loading it takes a
+screenshot of each table, prints every line it recorded, writes them to `lines.json` next to the
+screenshots, and quits KSP — give it `--keep-running` to leave KSP open. Save `KSP.log` before starting
+KSP again: KSP writes it anew at every start.

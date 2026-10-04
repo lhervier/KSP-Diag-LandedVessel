@@ -78,9 +78,13 @@ Copy a save into the folder of a sandbox game and load it from that game.
   installed; what the script printed in [`runs/switching-stock-script.txt`](runs/switching-stock-script.txt),
   and every line it recorded in [`runs/switching-stock-lines.json`](runs/switching-stock-lines.json).
 - [`runs/runway-stock.log`](runs/runway-stock.log) — the `KSP.log` of the session the six loadings
-  of the runway protocol were taken in.
-- [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the `KSP.log` of the session the six
-  loadings on the Mun, beside the runway placed by Kerbal Konstructs, were taken in.
+  of the runway protocol were played in by `run-runway.py`, with both instruments and KSP-MCPServer
+  installed; what the script printed in [`runs/runway-stock-script.txt`](runs/runway-stock-script.txt),
+  and every line it recorded in [`runs/runway-stock-lines.json`](runs/runway-stock-lines.json).
+- [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the same, the six loadings on the Mun,
+  beside the runway placed by Kerbal Konstructs; what the script printed in
+  [`runs/runway-mun-kk-stock-script.txt`](runs/runway-mun-kk-stock-script.txt), and every line it
+  recorded in [`runs/runway-mun-kk-stock-lines.json`](runs/runway-mun-kk-stock-lines.json).
 - [`runs/approach-stock.log`](runs/approach-stock.log) — the `KSP.log` of the session the six round
   trips were played in by `run-approach.py`, with KSP Diag - Terrain Height and KSP-MCPServer installed;
   what the script printed in [`runs/approach-stock-script.txt`](runs/approach-stock-script.txt), and

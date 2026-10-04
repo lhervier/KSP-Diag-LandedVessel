@@ -140,7 +140,7 @@ with this mod added. The first also goes to the Moon and to Earth, in that insta
 In all four, **On rails** — the height the game hands the craft back at — barely moves: two
 thousandths of a millimetre at most from one loading to the next in the first series, one thousandth
 across a round trip in the second, one thousandth across six loadings in the third, one thousandth in
-the fourth. So the craft itself is put back where it was.
+the fourth (two on the Mun). So the craft itself is put back where it was.
 What it then comes to rest on is never quite where it was.
 
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save
@@ -172,11 +172,11 @@ downwards.
 
 **The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). Six
 loadings on Kerbin, two identical craft 152 m apart. Both are handed back at the same height every
-time, within a thousandth of a millimetre. Both come to rest somewhere else every time: within 88.3 mm
-on the grass, within 130.3 mm on the runway. And not together: the step between them, which is the step
-between the grass and the runway, spreads over 81.7 mm. The same on the Mun, beside a runway placed by
-[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): within 24.1 mm on the ground,
-33.5 mm on the runway, 42.9 mm for the step. Whether the game or a mod places it, a structure behaves
+time, within a thousandth of a millimetre. Both come to rest somewhere else every time: within 89.5 mm
+on the grass, within 116.8 mm on the runway. And not together: the step between them, which is the step
+between the grass and the runway, spreads over 38.5 mm. The same on the Mun, beside a runway placed by
+[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs): within 25.9 mm on the ground,
+17.7 mm on the runway, 36.0 mm for the step. Whether the game or a mod places it, a structure behaves
 the same.
 
 **→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
