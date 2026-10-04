@@ -133,9 +133,12 @@ by Kerbal Konstructs.
 
 Four series, one per protocol, all taken in the same install: Harmony, ModuleManager and
 [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what most players run —
-with this mod added. The first also goes to the Moon and to Earth, in that install with
-[Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, and the fourth to the Mun, with
-[Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
+with this mod added, and [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight)
+beside it, reading the ground under the same craft. Every series is played by the script of its
+protocol, through [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). The first also goes to
+the Moon and to Earth, in that install with [Real Solar System](https://github.com/KSP-RO/RealSolarSystem)
+added, and the fourth to the Mun, with [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs)
+added.
 
 In all four, **On rails** — the height the game hands the craft back at — barely moves: two
 thousandths of a millimetre at most from one loading to the next in the first series, one thousandth
