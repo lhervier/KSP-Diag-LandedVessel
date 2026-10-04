@@ -12,8 +12,13 @@ The save the protocol uses is [`diag/switch-kerbin.sfs`](../diag/switch-kerbin.s
 ## The install
 
 KSP 1.12.5 on Windows, with `GameData` holding Harmony, ModuleManager,
-[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1 and this mod, and
-nothing else.
+[KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) 1.41.1, this mod,
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), which reads the ground
+under the capsule at the same moments, and [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer),
+which plays the protocol, and nothing else.
+
+The six rounds were played by [the script of the protocol](the-protocol-switching.md#played-by-a-script),
+`run-switching.py`, in a single session.
 
 ## The readings
 
@@ -25,13 +30,13 @@ not a record.
 
 | round | **On rails** (mm) | **Settled** after the switch (mm) | **Moved** |
 |---|---|---|---|
-| 1 | 600,065,127.487 | 600,065,138.314 | **+10.827 mm** |
-| 2 | 600,065,127.487 | 600,065,082.973 | **−44.514 mm** |
-| 3 | 600,065,127.487 | 600,065,043.980 | **−83.507 mm** |
-| 4 | 600,065,127.486 | 600,065,043.297 | **−84.189 mm** |
-| 5 | 600,065,127.486 | 600,065,147.754 | **+20.268 mm** |
-| 6 | 600,065,127.485 | 600,065,145.807 | **+18.322 mm** |
-| **lowest to highest** | **0.002 mm** | **104.5 mm** | |
+| 1 | 600,065,127.486 | 600,065,107.149 | **−20.338 mm** |
+| 2 | 600,065,127.486 | 600,065,115.844 | **−11.641 mm** |
+| 3 | 600,065,127.486 | 600,065,143.473 | **+15.987 mm** |
+| 4 | 600,065,127.486 | 600,065,031.429 | **−96.057 mm** |
+| 5 | 600,065,127.486 | 600,065,107.091 | **−20.396 mm** |
+| 6 | 600,065,127.486 | 600,065,052.902 | **−74.584 mm** |
+| **lowest to highest** | **0.000 mm** | **112.0 mm** | |
 
 The first line of every round, recorded as the save opens, reads `0.000` in *Moved*: the capsule is
 still held where the save put it, with nothing to move it yet.
@@ -39,10 +44,10 @@ still held where the save put it, with nothing to move it yet.
 ## What these readings show
 
 **The game hands the capsule back at the same height every time.** Across the six loadings, *On
-rails* never moves by more than two thousandths of a millimetre.
+rails* reads the same digits, to within a thousandth of a millimetre.
 
 **What it comes to rest on is somewhere else every time.** Once the switch hands it over to physics,
-it settles between 84.2 mm lower and 20.3 mm higher: 104.5 mm from the lowest to the highest, both
+it settles between 96.1 mm lower and 16.0 mm higher: 112.0 mm from the lowest to the highest, both
 upwards and downwards.
 
 Which way it goes means no more here than in [the loading series](the-measurements-loading.md): the
@@ -56,5 +61,6 @@ to these readings word for word.
 ## The logs
 
 [`diag/runs/switching-stock.log`](../diag/runs/switching-stock.log) — the `KSP.log` of the session
-the six rounds were taken in. Before them, it also holds rounds taken from an earlier save, since
-replaced by the one above.
+the six rounds were taken in; what the script printed is in
+[`switching-stock-script.txt`](../diag/runs/switching-stock-script.txt), and every line it recorded,
+in both instruments, in [`switching-stock-lines.json`](../diag/runs/switching-stock-lines.json).

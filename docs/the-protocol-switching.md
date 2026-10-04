@@ -52,3 +52,24 @@ craft from what holds it in place, and the next line would be measuring that.
 and every round must start from that same height.
 
 One round says nothing on its own: it is the series that is worth reading, not a line.
+
+## Played by a script
+
+[`diag/automation/run-switching.py`](../diag/automation/run-switching.py) plays the protocol above,
+step for step, and takes the screenshot. It drives KSP through
+[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer), a mod that answers requests sent to it over
+HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
+install. Anyone can read it top to bottom: it follows the three steps above in the same order.
+
+1. Install KSP-MCPServer next to this mod, copy the save into a sandbox game, start KSP and wait for
+   the main menu.
+2. Run `python run-switching.py --folder <your sandbox game> --rounds 6 --out screenshots`.
+
+For each round, it loads the save, which opens on the rover with the capsule as its target, and
+records; then it switches to the capsule as the `]` key does, waits four seconds and for the digits to
+stop moving (within half a thousandth of a millimetre over two seconds), and records again. If
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight) is installed as well, it records in both windows at the
+same moment. It never saves the game. After the last round it takes a screenshot of each table, prints
+every line it recorded, writes them to `lines.json` next to the screenshots, and quits KSP — give it
+`--keep-running` to leave KSP open. Save `KSP.log` before starting KSP again: KSP writes it anew at
+every start.

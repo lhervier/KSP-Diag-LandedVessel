@@ -139,7 +139,7 @@ with this mod added. The first also goes to the Moon and to Earth, in that insta
 
 In all four, **On rails** — the height the game hands the craft back at — barely moves: two
 thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
-across a round trip in the second, two thousandths across six loadings in the third, one thousandth in
+across a round trip in the second, one thousandth across six loadings in the third, one thousandth in
 the fourth. So the craft itself is put back where it was.
 What it then comes to rest on is never quite where it was.
 
@@ -164,8 +164,8 @@ different amount every time.
 
 **Switching to a craft far away** ([the protocol in full](docs/the-protocol-switching.md)). Six
 rounds on Kerbin, in the same kind of install as the approach series: the capsule is handed back at
-the same height every time, within two thousandths of a millimetre, and comes to rest after the switch
-at a different height every time: 104.5 mm from the lowest to the highest, upwards as well as
+the same height every time, within a thousandth of a millimetre, and comes to rest after the switch
+at a different height every time: 112.0 mm from the lowest to the highest, upwards as well as
 downwards.
 
 **→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**

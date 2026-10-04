@@ -74,7 +74,9 @@ Copy a save into the folder of a sandbox game and load it from that game.
 ## The runs of the other protocols
 
 - [`runs/switching-stock.log`](runs/switching-stock.log) — the `KSP.log` of the session the six
-  switching rounds were taken in.
+  switching rounds were played in by `run-switching.py`, with KSP Diag - Terrain Height and KSP-MCPServer
+  installed; what the script printed in [`runs/switching-stock-script.txt`](runs/switching-stock-script.txt),
+  and every line it recorded in [`runs/switching-stock-lines.json`](runs/switching-stock-lines.json).
 - [`runs/runway-stock.log`](runs/runway-stock.log) — the `KSP.log` of the session the six loadings
   of the runway protocol were taken in.
 - [`runs/runway-mun-kk-stock.log`](runs/runway-mun-kk-stock.log) — the `KSP.log` of the session the six
