@@ -137,7 +137,7 @@ with this mod added. The first also goes to the Moon and to Earth, in that insta
 [Real Solar System](https://github.com/KSP-RO/RealSolarSystem) added, and the fourth to the Mun, with
 [Kerbal Konstructs](https://github.com/KSP-RO/Kerbal-Konstructs) added.
 
-In all four, **On rails** — the height the game hands the craft back at — barely moves: three
+In all four, **On rails** — the height the game hands the craft back at — barely moves: two
 thousandths of a millimetre at most from one loading to the next in the first series, six thousandths
 across a round trip in the second, two thousandths across six loadings in the third, one thousandth in
 the fourth. So the craft itself is put back where it was.
@@ -146,9 +146,10 @@ What it then comes to rest on is never quite where it was.
 **Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). The same save
 loaded six times on Kerbin, on the Mun, on Minmus and on Gilly, with a lone capsule, then the whole
 campaign again with a two-part craft, which also goes to the Moon and to Earth of Real Solar System,
-much larger. The height the craft comes to rest at is never the same twice: lowest to highest,
-134.5 mm on Kerbin, 20.7 mm on the Mun, 6.7 mm on Minmus, 3.3 mm on Gilly, then 262.6 mm on the Moon
-and 740.0 mm on Earth. Real Solar System ships a workaround of its own, which moves a craft back onto
+much larger. Every series is played by a script, through KSP-MCPServer. The height the craft comes to
+rest at is never the same twice: lowest to highest, with one part then two, 73.7 and 43.7 mm on Kerbin,
+5.6 and 18.2 mm on the Mun, 4.6 and 7.3 mm on Minmus, 1.4 and 2.3 mm on Gilly, then 49.2 mm on the Moon
+and 292.4 mm on Earth. Real Solar System ships a workaround of its own, which moves a craft back onto
 the ground when it comes back more than 10 cm off; below that, the craft still jumps, and on the Moon
 it tipped over four times with the workaround running.
 
