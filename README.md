@@ -100,8 +100,8 @@ itself put the craft back onto the ground, nor a jump or a tip-over.
 Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
 runway, which is not the ground. All four fill the same window, and come with their craft and save.
 
-**Loading the same save.** Set a capsule on a small tank down on bare, flat ground, save once, then load that
-same save six times, recording after each loading.
+**Loading the same save.** Load a save holding a craft landed on bare, flat ground six times,
+recording after each loading; the saves come with this mod, and a page tells how to make your own.
 
 **→ Full chapter: [The protocol: loading the same save](docs/the-protocol-loading.md)**
 
