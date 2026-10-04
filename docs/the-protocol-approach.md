@@ -5,9 +5,6 @@ loaded into a scene already running, step by step. Nothing is loaded here — fr
 the last, it is one single flight. The columns it fills are in [The window](the-window.md), and what
 it reads is in [The measurements: coming back to a craft you left](the-measurements-approach.md).
 
-The other protocol takes the same reading on a craft handed back by a save:
-[The protocol: loading the same save](the-protocol-loading.md).
-
 A craft is parked on flat ground. A rover drives far enough for the game to unload it, then comes
 back, and the window follows the parked craft throughout.
 
@@ -24,7 +21,7 @@ west of the KSC:
   them.
 
 You can of course build your own two craft instead. The parked one must meet the same conditions as
-[the capsule of the other protocol](the-protocol-loading.md): flat ground, no suspension, nothing that needs
+[the capsule of the loading protocol](the-protocol-loading.md): flat ground, no suspension, nothing that needs
 a slope to move on its own.
 
 ## The distances that decide everything
@@ -106,7 +103,7 @@ install. Anyone can read it top to bottom: it follows the steps above in the sam
 
 1. Install KSP-MCPServer next to this mod and [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight): the
    script records in both windows at the same moment, and waits on the reading of Diag TerrainHeight
-   to know the parked craft has settled. Copy the save into a sandbox game, start KSP and wait for the
+   to know the parked craft has settled. Copy [the save](../diag/approach-kerbin.sfs) into a sandbox game, start KSP and wait for the
    main menu.
 2. Run `python run-approach.py --folder <your sandbox game> --trips 6 --out screenshots`.
 

@@ -4,10 +4,6 @@ Part of [KSP Diag - Landed Vessel](../README.md): how to take the reading on a c
 to, without driving anywhere. The columns it fills are in [The window](the-window.md), and what it
 reads is in [The measurements: switching to a craft far away](the-measurements-switching.md).
 
-The two other protocols take the same reading on a craft handed back by a save —
-[The protocol: loading the same save](the-protocol-loading.md) — and on a craft you drive away from
-and back to — [The protocol: coming back to a craft you left](the-protocol-approach.md).
-
 Two craft are landed about two kilometres apart. You load the save while flying one of them, then
 jump to the other with the game's own *switch vessel* key, and the window follows that other craft
 throughout.
@@ -61,7 +57,7 @@ step for step, and takes the screenshot. It drives KSP through
 HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — no AI, no package to
 install. Anyone can read it top to bottom: it follows the three steps above in the same order.
 
-1. Install KSP-MCPServer next to this mod, copy the save into a sandbox game, start KSP and wait for
+1. Install KSP-MCPServer next to this mod, copy [the save](../diag/switch-kerbin.sfs) into a sandbox game, start KSP and wait for
    the main menu.
 2. Run `python run-switching.py --folder <your sandbox game> --rounds 6 --out screenshots`.
 

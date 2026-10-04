@@ -25,6 +25,12 @@ worlds of stock KSP, made by steps 1 to 3 of [the protocol](../docs/the-protocol
 - [`reload-gilly-1part.sfs`](reload-gilly-1part.sfs) and [`reload-gilly-2parts.sfs`](reload-gilly-2parts.sfs)
   — on Gilly.
 
+On the Moon and on Earth, in Real Solar System, the saves are
+[`reload-moon-rss.sfs`](reload-moon-rss.sfs), [`reload-moon-rss-resave.sfs`](reload-moon-rss-resave.sfs),
+[`reload-earth-rss-resave.sfs`](reload-earth-rss-resave.sfs) and
+[`reload-earth-rss-landed.sfs`](reload-earth-rss-landed.sfs): they load only on the install described
+in [On Real Solar System](#on-real-solar-system), which says what each one holds.
+
 Copy a save into the folder of a sandbox game and load it from that game.
 
 ## The scripts

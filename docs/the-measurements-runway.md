@@ -3,10 +3,7 @@
 Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the runway protocol](the-protocol-runway.md) — two identical craft, one on the grass and one on the
 runway, 152 m apart, both read at each of six loadings of the same save; then the same on the Mun,
-beside a runway placed by a mod. The other series are in
-[The measurements: loading the same save](the-measurements-loading.md),
-[The measurements: coming back to a craft you left](the-measurements-approach.md) and
-[The measurements: switching to a craft far away](the-measurements-switching.md).
+beside a runway placed by a mod.
 
 The save the protocol uses is [`diag/runway-kerbin.sfs`](../diag/runway-kerbin.sfs), and
 [the protocol page](the-protocol-runway.md#the-save) says what it holds. The Mun series uses

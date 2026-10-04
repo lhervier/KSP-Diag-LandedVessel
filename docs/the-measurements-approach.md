@@ -3,8 +3,7 @@
 Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the approach protocol](the-protocol-approach.md) — a craft parked on flat ground, a rover driving
 away until the game unloads it, then coming back. Nothing is loaded at any point: from the first line
-to the last, it is one single flight. The other series, on a craft handed back by a save, is in
-[The measurements: loading the same save](the-measurements-loading.md).
+to the last, it is one single flight.
 
 The save the protocol uses is [`diag/approach-kerbin.sfs`](../diag/approach-kerbin.sfs), and
 [the protocol page](the-protocol-approach.md#the-save) says what it holds.
@@ -42,7 +41,7 @@ The round trip pictured under the protocol, taken by hand in another flight of t
 
 The first line of the first screenshot is not a round trip: it is the scene opening, the craft handed
 back by the save and coming to rest 513.774 mm higher than the save held it. That is the reading
-[the other series](the-measurements-loading.md) is about, and it is left aside here.
+[the loading series](the-measurements-loading.md) is about, and it is left aside here.
 
 ## What these readings show
 

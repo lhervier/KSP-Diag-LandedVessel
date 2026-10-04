@@ -149,7 +149,7 @@ HTTP, from the computer KSP runs on only; and it needs nothing but Python 3 — 
 install. Anyone can read it top to bottom: it follows the three steps above in the same order.
 
 1. Install KSP-MCPServer next to this mod and [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight): the
-   script records in both windows at the same moment. Copy the save into a sandbox game, start KSP and
+   script records in both windows at the same moment. Copy [the save](../diag/runway-kerbin.sfs) into a sandbox game, start KSP and
    wait for the main menu.
 2. Run `python run-runway.py --folder <your sandbox game> --loads 6 --out screenshots`. On the Mun, add
    `--save runway-mun-kk`, with Kerbal Konstructs and its runway installed as said above.

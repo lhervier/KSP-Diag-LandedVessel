@@ -2,9 +2,7 @@
 
 Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the loading protocol](the-protocol-loading.md), on the four worlds of stock KSP and on two much
-larger ones, the Moon and Earth of Real Solar System. The other series are in
-[The measurements: coming back to a craft you left](the-measurements-approach.md) and
-[The measurements: switching to a craft far away](the-measurements-switching.md).
+larger ones, the Moon and Earth of Real Solar System.
 
 ## The install
 

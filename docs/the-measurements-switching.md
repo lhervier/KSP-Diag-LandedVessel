@@ -3,8 +3,6 @@
 Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
 [the switching protocol](the-protocol-switching.md) — a capsule and a rover landed 1.97 km apart, the
 save loaded while flying the rover, then the game's *switch vessel* key pressed to fly the capsule.
-The other series are in [The measurements: loading the same save](the-measurements-loading.md) and
-[The measurements: coming back to a craft you left](the-measurements-approach.md).
 
 The save the protocol uses is [`diag/switch-kerbin.sfs`](../diag/switch-kerbin.sfs), and
 [the protocol page](the-protocol-switching.md#the-save) says what it holds.
