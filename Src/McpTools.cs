@@ -67,6 +67,15 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             };
         }
 
+        [McpTool("landedvessel_show_window",
+            "Shows or hides the window of KSP Diag - Landed Vessel, as Mod+F6 does; what it measures goes on either " +
+            "way. Returns whether it shows (visible).")]
+        internal static object ShowWindow(bool visible)
+        {
+            KSPDiagLandedVessel.WindowVisible = visible;
+            return new Dictionary<string, object> { { "visible", KSPDiagLandedVessel.WindowVisible } };
+        }
+
         // One line of the table as the tools return it: the two distances and their difference, which
         // the table shows but Reading only computes.
         private static Dictionary<string, object> Line(Reading reading)
