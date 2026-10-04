@@ -13,7 +13,8 @@ away, back in range; and back on the rover's starting spot, a few seconds after 
 physics. It turns on the cheat Infinite Electricity first, for the rover. After each round trip it takes one
 screenshot of each table, that window alone in the middle of the screen, and empties both tables: thirty lines
 do not fit in a window. It prints what it read, writes it to lines.json after every round trip, and quits KSP
-(unless --keep-running is given).
+(unless --keep-running is given). The windows of the instruments are hidden once the flight opens, so that
+the scene shows, and each is shown only for its screenshot.
 """
 import argparse
 import json
@@ -81,15 +82,16 @@ def record(trip, line, rows):
 
 
 def screenshots(directory, trip, width):
-    """One screenshot per table, each window alone in the middle of the screen, then both tables emptied."""
-    off_screen = -3000
-    for shown, hidden in (("landedvessel", "terrainheight"), ("terrainheight", "landedvessel")):
-        call(hidden + "_move_window", x=off_screen, y=60)
+    """One screenshot per table, each window alone in the middle of the screen, then both tables emptied: the
+    windows stay hidden but for their own screenshot."""
+    for shown in ("landedvessel", "terrainheight"):
+        call(shown + "_show_window", visible=True)
         size = call(shown + "_move_window", x=0, y=60)
         call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
         call("screenshot", path=os.path.join(os.path.abspath(directory), "trip%d-%s.png" % (trip, shown)),
              return_image=False)
+        call(shown + "_show_window", visible=False)
     call("landedvessel_move_window", x=0, y=40)
     call("terrainheight_move_window", x=640, y=40)
     call("landedvessel_clear")
@@ -122,6 +124,8 @@ def main():
     call("terrainheight_clear")
     call("landedvessel_move_window", x=0, y=40)
     call("terrainheight_move_window", x=640, y=40)
+    call("landedvessel_show_window", visible=False)
+    call("terrainheight_show_window", visible=False)
     rover = call("get_state")["vessel"]
     home = (rover["latitude"], rover["longitude"])
     call("wait", seconds=5)

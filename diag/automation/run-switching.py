@@ -10,7 +10,8 @@ For each round it does what the protocol asks a player to do, in the same order:
 the rover with the capsule as its target, record; switch to the capsule as the ] key does, wait four seconds and
 for the digits to stop moving, record. Every instrument installed records at every step. It never saves the game.
 At the end it takes a screenshot of each table, that window alone, prints what it read, writes it to lines.json, and quits KSP
-(unless --keep-running is given).
+(unless --keep-running is given). The windows of the instruments are hidden once the flight opens, so that
+the scene shows, and each is shown only for its screenshot.
 """
 import argparse
 import json
@@ -88,17 +89,16 @@ def record(rows, instruments, round_, step):
 
 
 def screenshots(directory, name, instruments, width):
-    """One screenshot per table, each window alone in the middle of the screen."""
-    off_screen = -3000
+    """One screenshot per table, each window alone in the middle of the screen: the windows stay hidden but
+    for their own screenshot."""
     for shown in instruments:
-        for hidden in instruments:
-            if hidden != shown:
-                call(hidden + "_move_window", x=off_screen, y=60)
+        call(shown + "_show_window", visible=True)
         size = call(shown + "_move_window", x=0, y=60)
         call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
         call("screenshot", path=os.path.join(os.path.abspath(directory), "%s-%s.png" % (name, shown)),
              return_image=False)
+        call(shown + "_show_window", visible=False)
 
 
 def main():
@@ -126,6 +126,7 @@ def main():
             for i, instrument in enumerate(instruments):
                 call(instrument + "_clear")
                 call(instrument + "_move_window", x=640 * i, y=40)
+                call(instrument + "_show_window", visible=False)
         target = [v for v in call("list_vessels") if v["target"]]
         if len(target) != 1:
             raise RuntimeError("the save should open with the capsule as the target")

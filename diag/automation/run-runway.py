@@ -10,7 +10,8 @@ For each loading it does what the protocol asks a player to do, in the same orde
 the digits to stop moving, record on the craft being flown, switch to the other craft as the [ key does,
 wait, record again. Both instruments record at every stop. At the end it takes a screenshot of each table,
 that window alone. It prints what it read, writes it to lines.json, and quits KSP (unless --keep-running is
-given).
+given). The windows of the instruments are hidden once the flight opens, so that
+the scene shows, and each is shown only for its screenshot.
 """
 import argparse
 import json
@@ -67,17 +68,16 @@ def record(load, craft, rows):
 
 
 def screenshots(directory, name, instruments, width):
-    """One screenshot per table, each window alone in the middle of the screen."""
-    off_screen = -3000
+    """One screenshot per table, each window alone in the middle of the screen: the windows stay hidden but
+    for their own screenshot."""
     for shown in instruments:
-        for hidden in instruments:
-            if hidden != shown:
-                call(hidden + "_move_window", x=off_screen, y=60)
+        call(shown + "_show_window", visible=True)
         size = call(shown + "_move_window", x=0, y=60)
         call(shown + "_move_window", x=(width - size["width"]) / 2, y=60)
         call("wait", seconds=1)
         call("screenshot", path=os.path.join(os.path.abspath(directory), "%s-%s.png" % (name, shown)),
              return_image=False)
+        call(shown + "_show_window", visible=False)
 
 
 def main():
@@ -102,6 +102,8 @@ def main():
             call("terrainheight_clear")
             call("landedvessel_move_window", x=0, y=40)
             call("terrainheight_move_window", x=640, y=40)
+            call("landedvessel_show_window", visible=False)
+            call("terrainheight_show_window", visible=False)
         vessels = call("list_vessels")
         other = [v for v in vessels if v["loaded"] and not v["active"]]
         if len(other) != 1:
