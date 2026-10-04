@@ -7,7 +7,8 @@ beside a runway placed by a mod.
 
 The save the protocol uses is [`diag/runway-kerbin.sfs`](../diag/runway-kerbin.sfs), and
 [the protocol page](the-protocol-runway.md#the-save) says what it holds. The Mun series uses
-[`diag/runway-mun-kk.sfs`](../diag/runway-mun-kk.sfs) and the two files beside it.
+[`diag/runway-mun-kk.sfs`](../diag/runway-mun-kk.sfs), with Kerbal Konstructs installed and the two files
+of its runway copied into `GameData` ([the protocol page](the-protocol-runway.md#the-same-on-the-mun-with-a-runway-placed-by-a-mod)).
 
 ## The install
 
