@@ -3,3 +3,4 @@ obj/
 GameData/KSPDiagLandedVessel/*.dll
 GameData/KSPDiagLandedVessel/*.zip
 CLAUDE.md
+__pycache__/
