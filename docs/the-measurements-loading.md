@@ -160,7 +160,7 @@ The sessions are logged in [`diag/runs`](../diag/README.md#on-real-solar-system)
 the component turned off in `reload-moon-rss-vgpeoff-stock.log`, the first tip-over of the save taken
 again in `reload-moon-rss-stock-tipped.log`, and the six loadings of Earth watched in
 `reload-earth-rss-stock.log`; the six loadings played with Diag TerrainHeight on the Moon in
-[Diag TerrainHeight's `diag/runs`](https://github.com/lhervier/KSP-Diag-TerrainHeight/tree/master/diag/runs),
+[Diag TerrainHeight's `diag/runs`](https://github.com/lhervier/KSP-Diag-TerrainHeight/tree/main/diag/runs),
 file `reload-moon-rss-stock.log`.
 
 **→ What they show: [What the measurements show: loading the same save](what-the-measurements-show-loading.md)**
