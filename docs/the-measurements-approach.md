@@ -43,24 +43,7 @@ The first line of the first screenshot is not a round trip: it is the scene open
 back by the save and coming to rest 513.774 mm higher than the save held it. That is the reading
 [the loading series](the-measurements-loading.md) is about, and it is left aside here.
 
-## What these readings show
-
-**The game gives the craft back where it took it.** Lines 2 and 4 of every round trip — before the
-trip and after it — never differ by more than a thousandth of a millimetre. Whatever happened
-while the rover was away, the height the game holds the craft at came back untouched.
-
-**What it comes to rest on is somewhere else.** Once physics takes it over again, it settles between
-6.6 and 37.2 mm from that height, upwards as often as downwards, and a different amount every time.
-
-**Nothing was loaded.** No scene change, no save, no quickload: the whole table was filled in one
-flight, by driving away and coming back.
-
-The size is not the same from one round trip to the next, and it is not guaranteed either: we have
-seen a round trip come back within a millimetre. That is why the protocol asks for a series.
-
-As everywhere else with this instrument, what is measured is **the craft**, not the ground it rests
-on — [what this instrument shows, and what it does not](this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not) applies
-to these readings word for word.
+**→ What they show: [What the measurements show: coming back to a craft you left](what-the-measurements-show-approach.md)**
 
 ## The logs
 

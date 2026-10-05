@@ -61,7 +61,7 @@ of other things move a craft when a scene opens. Two well-known examples, among 
   craft comes back in its original, unbent shape — and if the ground is not flat, part of it really
   *is* underground, with no measurement error involved.
 
-Both of those are avoidable, and that is exactly why [the first protocol below](docs/the-protocol-loading.md) uses a
+Both of those are avoidable, and that is exactly why [the loading protocol](docs/the-protocol-loading.md) uses a
 single capsule with no legs and no wheels, on flat ground: it takes them out of the picture, along with anything else that
 needs a suspension, several parts, or a slope to happen.
 
@@ -88,72 +88,58 @@ apart: it measures the ground itself, with no craft in the picture at all.
 
 In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**, and
 **Moved**, the difference between the two; the bottom line runs live until *Record* freezes it. It
-follows the craft you are flying, or your target — which is how the second protocol below follows a
-parked craft. **Moved** should be zero, and its sign tells you what it is worth: a craft that fell onto
+follows the craft you are flying, or your target — which is how [Coming back to a craft you left](#coming-back-to-a-craft-you-left)
+follows a parked craft. **Moved** should be zero, and its sign tells you what it is worth: a craft that fell onto
 the surface gives a clean reading, one pushed back out of it does not. It does not show when the game
 itself put the craft back onto the ground, nor a jump or a tip-over.
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
-## The protocol
+## The situations
 
-Three protocols, one for each way the game can set a craft down on the ground, and a fourth for the
-runway, which is not the ground. All four fill the same window, and come with their craft and save.
-
-**Loading the same save.** Load a save holding a craft landed on bare, flat ground six times,
-recording after each loading; the saves come with this mod, and a page tells how to make your own.
-
-**→ Full chapter: [The protocol: loading the same save](docs/the-protocol-loading.md)**
-
-**Coming back to a craft you left.** In one single flight, drive a rover away from a parked craft
-until the game unloads it, then back until its physics starts again.
-
-**→ Full chapter: [The protocol: coming back to a craft you left](docs/the-protocol-approach.md)**
-
-**Switching to a craft far away.** Load a save holding two craft 1.97 km apart, record, switch to the
-other with the game's own key, and record again; six loadings.
-
-**→ Full chapter: [The protocol: switching to a craft far away](docs/the-protocol-switching.md)**
-
-**The runway and the grass beside it.** The same with two identical craft, one on the runway and one
-on the grass beside it, on Kerbin, then on the Mun beside a runway placed by Kerbal Konstructs.
-
-**→ Full chapter: [The protocol: the runway and the grass beside it](docs/the-protocol-runway.md)**
-
-## The measurements
-
-Taken with Harmony, ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes)
-— what most players run — and this mod, every series played by the script of its protocol through
+Each situation below comes with its protocol, its measurements and what they show, and all of them
+fill the same window: the ways the game can set a craft down on the ground, and the runway, which is
+not the ground. Every protocol comes with its craft and save. Every series was taken with Harmony,
+ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what
+most players run — and this mod, played by the script of its protocol through
 [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Each page gives its install in full.
 
-In all four, **On rails** — the height the game hands the craft back at — comes back to within a
-thousandth or two of a millimetre: the craft itself is put back where it was. What it comes to rest on
-is not.
+In every one of them, **On rails** — the height the game hands the craft back at — comes back to
+within a thousandth or two of a millimetre: the craft itself is put back where it was. What it comes
+to rest on is not.
 
-**Loading the same save** ([the protocol in full](docs/the-protocol-loading.md)). On the four stock
-worlds, then on the Moon and Earth of Real Solar System. The height the craft comes to rest at is never
-the same twice: up to 43.7 mm apart on Kerbin, 292.4 mm on Earth.
+## Loading the same save
 
-**→ Full chapter: [The measurements: loading the same save](docs/the-measurements-loading.md)**
+Load a save holding a craft landed on bare, flat ground six times, recording after each loading; on
+the four stock worlds, then on the Moon and Earth of Real Solar System. The height the craft comes to
+rest at is never the same twice: up to 43.7 mm apart on Kerbin, 292.4 mm on Earth.
 
-**Coming back to a craft you left** ([the protocol in full](docs/the-protocol-approach.md)). Six
-round trips on Kerbin, nothing loaded: the craft comes to rest 6.6 to 37.2 mm from the height it was
-handed back at, a different amount every time.
+**→ [The protocol](docs/the-protocol-loading.md) · [The measurements](docs/the-measurements-loading.md) · [What they show](docs/what-the-measurements-show-loading.md)**
 
-**→ Full chapter: [The measurements: coming back to a craft you left](docs/the-measurements-approach.md)**
+## Coming back to a craft you left
 
-**Switching to a craft far away** ([the protocol in full](docs/the-protocol-switching.md)). Six
-rounds on Kerbin: after the switch, the capsule comes to rest at a different height every time,
-112.0 mm from the lowest to the highest.
+In one single flight, drive a rover away from a parked craft until the game unloads it, then back
+until its physics starts again; six round trips on Kerbin. Nothing is loaded, yet the craft comes to
+rest 6.6 to 37.2 mm from the height it was handed back at, a different amount every time.
 
-**→ Full chapter: [The measurements: switching to a craft far away](docs/the-measurements-switching.md)**
+**→ [The protocol](docs/the-protocol-approach.md) · [The measurements](docs/the-measurements-approach.md) · [What they show](docs/what-the-measurements-show-approach.md)**
 
-**The runway and the grass beside it** ([the protocol in full](docs/the-protocol-runway.md)). Both
-craft come to rest somewhere else at every loading, and not together: the step between the grass and
-the runway spreads over 38.5 mm on Kerbin. A runway placed by Kerbal Konstructs on the Mun does the
-same.
+## Switching to a craft far away
 
-**→ Full chapter: [The measurements: the runway and the grass beside it](docs/the-measurements-runway.md)**
+Load a save holding two craft 1.97 km apart, record, switch to the other with the game's own key, and
+record again; six rounds on Kerbin. After the switch, the capsule comes to rest at a different height
+every time, 112.0 mm from the lowest to the highest.
+
+**→ [The protocol](docs/the-protocol-switching.md) · [The measurements](docs/the-measurements-switching.md) · [What they show](docs/what-the-measurements-show-switching.md)**
+
+## The runway and the grass beside it
+
+Six loadings of a save holding two identical craft, one on the runway and one on the grass beside it,
+on Kerbin, then on the Mun beside a runway placed by Kerbal Konstructs. Both craft come to rest
+somewhere else at every loading, and not together: the step between the grass and the runway spreads
+over 38.5 mm on Kerbin. The runway on the Mun does the same.
+
+**→ [The protocol](docs/the-protocol-runway.md) · [The measurements](docs/the-measurements-runway.md) · [What they show](docs/what-the-measurements-show-runway.md)**
 
 ## Get it
 
