@@ -1,7 +1,7 @@
 # The measurements: coming back to a craft you left
 
 Part of [KSP Diag - Landed Vessel](../README.md): the readings taken with
-[the approach protocol](the-protocol-approach.md) — a craft parked on flat ground, a rover driving
+[the approach protocol](the-protocol-approach.md) — a craft parked on bare ground, a rover driving
 away until the game unloads it, then coming back. Nothing is loaded at any point: from the first line
 to the last, it is one single flight.
 

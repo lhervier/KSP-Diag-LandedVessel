@@ -23,8 +23,8 @@ So the window follows the capsule from the moment the scene opens: as the rover'
 once you have switched to it, as the craft you are flying. You have nothing to set.
 
 You can of course build your own two craft instead. The capsule must meet the same conditions as
-[the capsule of the loading protocol](the-protocol-loading.md): flat ground, no suspension, nothing
-that needs a slope to move on its own. The two craft must be more than 500 m apart, and less than
+[the capsule of the loading protocol](the-protocol-loading.md): a spot where it does not slide, no
+suspension. The two craft must be more than 500 m apart, and less than
 2250 m, so that the game keeps both of them loaded.
 
 ## The protocol

@@ -28,12 +28,15 @@ does not follow the ground's — [The measurements: the runway and the grass bes
 A reading taken there is about the structure, not the ground. On bare terrain there is only one thing
 under the craft.
 
-⚠️ **And on flat ground.** A landed craft at rest is held in place by the game, but only while its
-throttle is closed. Open it, even by a few percent, even on a craft with no engine, and nothing holds
-the craft any more: on a slope it slides slowly downhill, a fraction of a millimetre per second, and
-its height goes down as it slides. On flat ground it stays put. A spot is good if, once the save is
-loaded, `KSP.log` has no `ground contact! - error. Moving Vessel` line naming your craft, and
-**Settled** stops moving once the craft has come to rest.
+⚠️ **And on a spot where it does not slide.** The ground need not be flat: what counts is that the
+craft stays put. A craft that slides does so slowly, a fraction of a millimetre per second, and its
+height goes down as it slides: **Settled**, on the live line, keeps changing instead of stopping. If
+it does, turn SAS on and watch again; holding the craft's attitude can be enough to stop it, and the
+save keeps SAS on. If it still slides, pick another spot. Whatever the ground, keep the throttle
+closed: open it, even by a few percent, even on a craft with no engine, and the game no longer holds
+the craft still. A spot is good if, once the save is loaded, `KSP.log` has no `ground contact! -
+error. Moving Vessel` line naming your craft, and **Settled** stops moving once the craft has come to
+rest.
 
 Note that on some of the screenshots of this page, the throttle gauge left of the navball is not at zero:
 they were taken with Shift+Win+S, and its Shift opened the throttle. Take yours with F1 or Print

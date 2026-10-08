@@ -5,7 +5,7 @@ loaded into a scene already running, step by step. Nothing is loaded here — fr
 the last, it is one single flight. The columns it fills are in [The window](the-window.md), and what
 it reads is in [The measurements: coming back to a craft you left](the-measurements-approach.md).
 
-A craft is parked on flat ground. A rover drives far enough for the game to unload it, then comes
+A craft is parked on bare ground. A rover drives far enough for the game to unload it, then comes
 back, and the window follows the parked craft throughout.
 
 ## The save
@@ -21,8 +21,8 @@ west of the KSC:
   them.
 
 You can of course build your own two craft instead. The parked one must meet the same conditions as
-[the craft of the loading protocol](the-protocol-loading.md): flat ground, no suspension, nothing that needs
-a slope to move on its own.
+[the craft of the loading protocol](the-protocol-loading.md): a spot where it does not slide, no
+suspension.
 
 ## The distances that decide everything
 

@@ -62,8 +62,8 @@ of other things move a craft when a scene opens. Two well-known examples, among 
   *is* underground, with no measurement error involved.
 
 Both of those are avoidable, and that is exactly why [the loading protocol](docs/the-protocol-loading.md) uses a
-single capsule with no legs and no wheels, on flat ground: it takes them out of the picture, along with anything else that
-needs a suspension, several parts, or a slope to happen.
+single capsule with no legs and no wheels, on a spot where it does not slide: it takes them out of the picture, along with
+anything else that needs a suspension or several parts to happen.
 
 ## This mod's demonstration
 
@@ -110,7 +110,7 @@ to rest on is not.
 
 ## Loading the same save
 
-Load a save holding a craft landed on bare, flat ground six times, recording after each loading; on
+Load a save holding a craft landed on bare ground, where it does not slide, six times, recording after each loading; on
 the four stock worlds, then on the Moon and Earth of Real Solar System. The height the craft comes to
 rest at is never the same twice: up to 43.7 mm apart on Kerbin, 292.4 mm on Earth.
 

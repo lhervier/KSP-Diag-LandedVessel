@@ -6,7 +6,8 @@ reads is in [The measurements: loading the same save](the-measurements-loading.m
 
 ## The save
 
-The protocol loads a save holding one craft landed on bare, flat ground, and nothing else. The saves it
+The protocol loads a save holding one craft landed on bare ground, on a spot where it does not slide,
+and nothing else. The saves it
 was played on come with this mod, in [`diag`](../diag/README.md#the-saves-of-the-loading-protocol): a
 capsule on a small flat fuel tank on each of the four worlds of stock KSP, `reload-kerbin-2parts.sfs`
 and the same for `mune`, `minmus` and `gilly`. Copy one into the folder of a sandbox game and load it

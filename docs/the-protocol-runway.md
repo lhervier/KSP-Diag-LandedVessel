@@ -30,8 +30,8 @@ then read the same craft.
 You can make your own instead: launch the craft from the Spaceplane Hangar, move it onto the grass
 beside the runway with `Alt+F12 → Cheats → Set Position`, launch the same craft a second time and leave
 it on the runway, then save once. Each craft must meet the conditions of
-[the capsule of the loading protocol](the-protocol-loading.md): no suspension, nothing that needs a slope
-to move on its own.
+[the capsule of the loading protocol](the-protocol-loading.md): no suspension, and a spot where it does
+not slide.
 
 ### The same on the Mun, with a runway placed by a mod
 
