@@ -1,86 +1,38 @@
 # KSP Diag - Landed Vessel
 
-**⚠️ Work in progress.** This is an active investigation, not a finished mod. The figures, the code and the conclusions on this page can still change, and several questions are still open.
+**⚠️ Work in progress.** This is an active investigation, not a finished mod. The code and the pages of this repository can still change.
 
 **How this was made.** Written with Claude, Anthropic's AI assistant, and reviewed line by line by a
 human — me. I am saying so before anything else, because contributions made with an AI deserve a closer
 look than others, and because some people would rather stop reading here. This mod measures and fixes
-nothing, so what there is to check is the reading itself: the source is public, and the protocol it
-comes with runs on a stock install, on your own craft, against the figures given here.
+nothing, so what there is to check is the reading itself: the source is public, and the few lines that
+take it are quoted in [This mod's demonstration](docs/this-mods-demonstration.md).
 
-A measuring instrument for KSP 1.12, and the first of a small family of them. It lets you check, on
-your own install, a claim about the ground your craft is parked on:
+A measuring instrument for KSP 1.12. Whenever the game sets a landed craft down — when a save is loaded,
+when you come back to a craft you left parked, when you switch to a craft far away — it reads the height
+the game hands the craft back at, and the height the craft actually comes to rest at. It lets you check,
+on your own install, whether a landed craft comes back to rest where it was left.
 
-> **The ground KSP builds under you is never built at the same height twice.** Load the same save five
-> times, and the surface your craft is standing on comes back a little higher or a little lower each
-> time — a few centimetres apart on Kerbin, less on smaller worlds, and up to seventy on Earth in
-> Real Solar System.
-
-## Why it matters
-
-Every time you load, it is a coin toss between two outcomes.
-
-**The ground comes back lower than it was when you saved.** Your craft is now hovering a couple of
-centimetres above it, so it drops those two centimetres. You never notice, and nothing breaks.
-
-**The ground comes back higher than it was when you saved.** Your craft is now *inside* the ground —
-and the physics engine will not leave two solid things overlapping. It pushes them apart, hard, in
-the only direction available: up. Your craft gets launched.
-
-![A craft jumping on its own the moment a save is reloaded](https://raw.githubusercontent.com/lhervier/KSP-TerrainPrecisionFix/main/imgs/Booing-scaled.gif)
-
-*KSP 1.12 with [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) as the only
-mod installed. A pod on an empty fuel tank, parked in the grass at the KSC, saved, then reloaded from the
-pause menu, several times if needed — nothing touched in between.*
-
-That second case is the symptom everybody already knows. The lander that twitches, hops or flips the
-moment the scene finishes loading. The base that sat perfectly flush yesterday and is buried up to
-the hatches today. The big base that tears itself apart the very first time you load it, and never
-again afterwards. A craft with many parts spread over a wide area gives the coin toss more chances
-to land the wrong way up.
-
-**Loading is not the only time the coin is tossed.** A landed craft you fly towards is loaded long
-before you reach it, but held still at the position it was left at; its physics only starts once you
-are within 200 m. The ground under it was not built when that position was recorded, so the same toss
-happens there. From 200 m away you see much less of it — and it does just as much damage.
-
-Both can be measured with this mod, and each has its own protocol: loading the same save over and
-over, which is the easiest to repeat, and driving away from a parked craft and coming back, which
-never loads anything at all.
-
-### Disclaimer: it is not the only cause
-
-The ground moving is one cause among several, and this page does not claim it is the only one. Plenty
-of other things move a craft when a scene opens. Two well-known examples, among others:
-
-- **suspensions.** Landing legs and wheels come back fully extended, because that is the only state
-  KSP can restore them to. They then compress under the weight of the craft, and the craft moves
-  while they do.
-- **a craft bent to fit the ground.** While you play, physics twists the joints between parts so the
-  craft settles onto the shape of the ground beneath it. That twisting is not saved. On loading, the
-  craft comes back in its original, unbent shape — and if the ground is not flat, part of it really
-  *is* underground, with no measurement error involved.
-
-Both of those are avoidable, and that is exactly why [the loading protocol](docs/the-protocol-loading.md) uses a
-single capsule with no legs and no wheels, on a spot where it does not slide: it takes them out of the picture, along with
-anything else that needs a suspension or several parts to happen.
+Why that matters, and what was found with it, is told by
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix#why-the-moving-ground-matters).
 
 ## This mod's demonstration
 
-You cannot look at the ground and see this: the surface you walk on and the surface you see are one and
-the same, so the picture shifts along with it. What you can see is what rests *on* the ground. So the
-mod measures the distance from the root part of your craft to the centre of the body, in millimetres and
-in double precision from end to end, and records it twice: **on rails**, while the game is still
-holding the craft at the position it was given, before physics has run on it — at the opening of a
-scene, the position the save gives back — and **settled**, once the craft has come to rest. Reload the same save several times, then read the two columns against each
-other. As long as neither of them varies from one loading to the next, the round trip is exact and
-nothing about the craft itself has changed. One of them does vary.
+You cannot look at the ground and see whether it moved: the surface you walk on and the surface you see
+are one and the same, so the picture shifts along with it. What you can see is what rests *on* the
+ground. So the mod measures the distance from the root part of your craft to the centre of the body, in
+millimetres and in double precision from end to end, and records it twice: **on rails**, while the game
+is still holding the craft at the position it was given, before physics has run on it — at the opening
+of a scene, the position the save gives back — and **settled**, once the craft has come to rest. Reload
+the same save several times, then read the two columns against each other. As long as neither of them
+varies from one loading to the next, the round trip is exact and nothing about the craft itself has
+changed.
 
 Both readings are of the **craft**, and that is where the instrument stops: it does not, on its own,
-name what moved. A ground rebuilt a little higher or a little lower at every loading accounts for the
-figures, but so would a perfectly steady ground with the craft set down beside it. A second instrument,
-[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), tells the two
-apart: it measures the ground itself, with no craft in the picture at all.
+name what moved. A ground rebuilt a little higher or a little lower at every loading would account for
+a varying **Settled**, but so would a perfectly steady ground with the craft set down beside it. A second
+instrument, [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), tells the
+two apart: it measures the ground itself, with no craft in the picture at all.
 
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
 
@@ -88,58 +40,46 @@ apart: it measures the ground itself, with no craft in the picture at all.
 
 In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**, and
 **Moved**, the difference between the two; the bottom line runs live until *Record* freezes it. It
-follows the craft you are flying, or your target — which is how [Coming back to a craft you left](#coming-back-to-a-craft-you-left)
-follows a parked craft. **Moved** should be zero, and its sign tells you what it is worth: a craft that fell onto
-the surface gives a clean reading, one pushed back out of it does not. It does not show when the game
-itself put the craft back onto the ground, nor a jump or a tip-over.
+follows the craft you are flying, or your target — which is how a parked craft can be followed while you
+drive away from it and back. **Moved** should be zero, and its sign tells you what it is worth: a craft
+that fell onto the surface gives a clean reading, one pushed back out of it does not. It does not show
+when the game itself put the craft back onto the ground, nor a jump or a tip-over.
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
-## The situations
+## Taking a reading
 
-Each situation below comes with its protocol, its measurements and what they show, and all of them
-fill the same window: the ways the game can set a craft down on the ground, and the runway, which is
-not the ground. Every protocol comes with its craft and save. Every series was taken with Harmony,
-ModuleManager and [KSP Community Fixes](https://github.com/KSPModdingLibs/KSPCommunityFixes) — what
-most players run — and this mod, played by the script of its protocol through
-[KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer). Each page gives its install in full.
+Set a craft down on bare ground and save once. Load that save, watch the live line until it stops
+moving, and press *Record*. Load the same save again, and record again. Each line is one loading: it is
+the series that is worth reading, not a line. A few rules keep the reading about the ground the craft
+rests on, and nothing else:
 
-In every one of them, **On rails** — the height the game hands the craft back at — comes back to
-within a thousandth or two of a millimetre: the craft itself is put back where it was. What it comes
-to rest on is not.
+- **Two parts at least, no landing legs, no wheels.** KSP sets a craft made of a single part back onto
+  the ground itself at every loading, and a suspension moves the craft while it compresses. A capsule on
+  a small flat fuel tank is enough.
+- **A spot where it does not slide.** The ground need not be flat, but if **Settled** keeps changing
+  instead of stopping, the craft is sliding: turn SAS on before saving, or pick another spot.
+- **Bare ground, not a runway or a launch pad.** They are structures the game places its own way: a
+  reading taken there is about the structure, not the ground.
+- **Never save during the series.** Every loading must start from the same save.
+- **Do not touch the throttle.** Open it, even by a few percent, even on a craft with no engine, and the
+  game no longer holds the craft still.
+- **Keep to loadings without a `Moving Vessel` line** naming your craft in `KSP.log`: that line means
+  the game moved the craft itself — [The window](docs/the-window.md) says why it matters.
 
-## Loading the same save
+A craft you come back to, or switch to, is read the same way: record once its physics has taken it
+over, three to five seconds later.
 
-Load a save holding a craft landed on bare ground, where it does not slide, six times, recording after each loading; on
-the four stock worlds, then on the Moon and Earth of Real Solar System. The height the craft comes to
-rest at is never the same twice: up to 43.7 mm apart on Kerbin, 292.4 mm on Earth.
+## Measured campaigns
 
-**→ [The protocol](docs/the-protocol-loading.md) · [The measurements](docs/the-measurements-loading.md) · [What they show](docs/what-the-measurements-show-loading.md)**
-
-## Coming back to a craft you left
-
-In one single flight, drive a rover away from a parked craft until the game unloads it, then back
-until its physics starts again; six round trips on Kerbin. Nothing is loaded, yet the craft comes to
-rest 6.6 to 37.2 mm from the height it was handed back at, a different amount every time.
-
-**→ [The protocol](docs/the-protocol-approach.md) · [The measurements](docs/the-measurements-approach.md) · [What they show](docs/what-the-measurements-show-approach.md)**
-
-## Switching to a craft far away
-
-Load a save holding two craft 1.97 km apart, record, switch to the other with the game's own key, and
-record again; six rounds on Kerbin. After the switch, the capsule comes to rest at a different height
-every time, 112.0 mm from the lowest to the highest.
-
-**→ [The protocol](docs/the-protocol-switching.md) · [The measurements](docs/the-measurements-switching.md) · [What they show](docs/what-the-measurements-show-switching.md)**
-
-## The runway and the grass beside it
-
-Six loadings of a save holding two identical craft, one on the runway and one on the grass beside it,
-on Kerbin, then on the Mun beside a runway placed by Kerbal Konstructs. Both craft come to rest
-somewhere else at every loading, and not together: the step between the grass and the runway spreads
-over 38.5 mm on Kerbin. The runway on the Mun does the same.
-
-**→ [The protocol](docs/the-protocol-runway.md) · [The measurements](docs/the-measurements-runway.md) · [What they show](docs/what-the-measurements-show-runway.md)**
+This instrument reads the landed craft in the campaigns of
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), each played without that
+mod and with it, with its protocol, its saves, its scripts and its logs:
+[loading the same save](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading.md),
+on bare ground and on [a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading.md#the-craft-on-a-runway),
+[coming back to a craft left parked](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-approach.md)
+and [switching to a craft far away](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-switching.md).
+The figures read with it are on those pages.
 
 ## Get it
 

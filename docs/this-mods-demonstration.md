@@ -2,7 +2,7 @@
 
 Part of [KSP Diag - Landed Vessel](../README.md): what the mod reads, why those two numbers are enough, and what they cannot tell on their own.
 
-You cannot look at the ground and see this: the surface you walk on and the surface you see are one
+You cannot look at the ground and see whether it moved: the surface you walk on and the surface you see are one
 and the same, so the picture shifts along with it. What you can see is what rests *on* the ground. So
 the mod measures the distance from your craft to the centre of the body, in millimetres, and records
 two values:
@@ -28,7 +28,7 @@ private static double DistanceToCentreMm(Vessel vessel)
 Reload the same save several times, then read the two columns against each other. The first one tells
 you whether KSP puts the craft back where it was; the second one tells you where it actually came to
 rest. As long as neither of them varies from one loading to the next, the round trip is exact and
-nothing about the craft itself has changed. One of them does vary, though — spoiler: the second one.
+nothing about the craft itself has changed.
 
 ## What this instrument shows, and what it does not
 

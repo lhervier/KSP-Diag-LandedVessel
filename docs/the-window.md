@@ -29,8 +29,7 @@ until you are close enough again.
 **Moved** is the figure to look at, and it should be zero. The craft was at rest on the ground when
 the game took it in hand; handed back at that very height, it has no reason to move at all.
 
-Its sign says which of the two outcomes of [the coin toss](../README.md#why-it-matters) you got — and
-how much the figure is worth.
+Its sign says which way the craft went — and how much the figure is worth.
 
 **Negative** — the craft came back above the surface it ends up resting on, and dropped onto it. That
 is a clean measurement: the figure is the gap it fell through.
@@ -49,14 +48,13 @@ craft comes back more than 10 cm off the ground, inside it or above it, it is mo
 block, and **Moved** then shows that move, not a craft coming to rest. The window cannot tell the two
 apart; `KSP.log` can: every such move leaves a line `ground contact! - error. Moving Vessel up X.XXXm`
 (or `down`) naming the craft, right before `Unpacking`. That is why
-[the loading protocol](the-protocol-loading.md) keeps to loadings without that line, and why, where it
-cannot be avoided, [the measurements](the-measurements-loading.md) mark the lines it moved.
+[Taking a reading](../README.md#taking-a-reading) keeps to loadings without that line, and why, where
+it cannot be avoided, the lines it moved are to be marked as such.
 
 **A jump or a tip-over does not show in the table.** There is one height per loading, and whether the
 craft jumped to get there is something you see on screen, not in the numbers: a jump ends at a height
 like any other. A craft that tipped over is worse: its root part now lies on its side, and **Moved**
-reads the height of a craft lying down, not one that settled. Note what you saw next to each line, as
-[the measurements](the-measurements-loading.md) do.
+reads the height of a craft lying down, not one that settled. Note what you saw next to each line.
 
 Watch the live line as the craft settles and you see the demonstration play out: while the craft is
 still on rails the two distances are equal and **Moved** reads `0.000`, and it is the first step of
