@@ -75,8 +75,8 @@ over, three to five seconds later.
 This instrument reads the landed craft in the campaigns of
 [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), each played without that
 mod and with it, with its protocol, its saves, its scripts and its logs:
-[loading the same save](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading.md),
-on bare ground and on [a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading.md#the-craft-on-a-runway),
+loading the same save, [on bare ground](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-craft-over-six-loads)
+and [on a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-statics.md#the-craft-on-a-runway),
 [coming back to a craft left parked](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-approach.md)
 and [switching to a craft far away](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-switching.md).
 The figures read with it are on those pages.
