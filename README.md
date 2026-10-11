@@ -8,28 +8,17 @@ look than others, and because some people would rather stop reading here. This m
 nothing, so what there is to check is the reading itself: the source is public, and the few lines that
 take it are quoted in [This mod's demonstration](docs/this-mods-demonstration.md).
 
-A measuring instrument for KSP 1.12. Whenever the game sets a landed craft down — when a save is loaded,
-when you come back to a craft you left parked, when you switch to a craft far away — it reads the height
-the game hands the craft back at, and the height the craft actually comes to rest at. It lets you check,
-on your own install, whether a landed craft comes back to rest where it was left.
+A measuring instrument for KSP 1.12. It measures where a landed craft is — the craft you are flying, or
+your target — as its distance to the centre of the body, in millimetres. It takes that reading at two
+moments: once when the game loads the craft (a save loaded, a craft you come back to or switch to), while
+the craft is still on rails, before physics has run on it; then live, for as long as the craft stays in
+the scene.
 
 ## This mod's demonstration
 
-You cannot look at the ground and see whether it moved: the surface you walk on and the surface you see
-are one and the same, so the picture shifts along with it. What you can see is what rests *on* the
-ground. So the mod measures the distance from the root part of your craft to the centre of the body, in
-millimetres and in double precision from end to end, and records it twice: **on rails**, while the game
-is still holding the craft at the position it was given, before physics has run on it — at the opening
-of a scene, the position the save gives back — and **settled**, once the craft has come to rest. Reload
-the same save several times, then read the two columns against each other. As long as neither of them
-varies from one loading to the next, the round trip is exact and nothing about the craft itself has
-changed.
-
-Both readings are of the **craft**, and that is where the instrument stops: it does not, on its own,
-name what moved. A ground rebuilt a little higher or a little lower at every loading would account for
-a varying **Settled**, but so would a perfectly steady ground with the craft set down beside it. A second
-instrument, [KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight), tells the
-two apart: it measures the ground itself, with no craft in the picture at all.
+The mod measures the distance from your craft to the centre of the body twice: **on rails**, where the
+game hands it back, and **settled**, once it has come to rest. It reads the craft, not the ground:
+[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight) reads the ground.
 
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
 
