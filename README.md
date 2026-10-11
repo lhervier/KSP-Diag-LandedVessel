@@ -31,26 +31,27 @@ bottom line runs live until *Record* freezes it.
 
 ## Taking a reading
 
-Set a craft down on bare ground and save once. Load that save, watch the live line until it stops
-moving, and press *Record*. Load the same save again, and record again. Each line is one loading: it is
-the series that is worth reading, not a line. A few rules keep the reading about the ground the craft
-rests on, and nothing else:
+Set a craft down and let it come to rest. Then have the game put it on rails and bring it back,
+whichever way you like — for instance, load a save, switch to a craft far away and back, or drive away
+from it with it as your target, past 2250 m, and come back. Once its physics has taken it over, watch
+the live line until it stops moving, and press *Record*.
 
-- **Two parts at least, no landing legs, no wheels.** KSP sets a craft made of a single part back onto
-  the ground itself at every loading, and a suspension moves the craft while it compresses. A capsule on
-  a small flat fuel tank is enough.
-- **A spot where it does not slide.** The ground need not be flat, but if **Settled** keeps changing
-  instead of stopping, the craft is sliding: turn SAS on before saving, or pick another spot.
-- **Bare ground, not a runway or a launch pad.** They are structures the game places its own way: a
-  reading taken there is about the structure, not the ground.
-- **Never save during the series.** Every loading must start from the same save.
-- **Do not touch the throttle.** Open it, even by a few percent, even on a craft with no engine, and the
-  game no longer holds the craft still.
-- **Keep to loadings without a `Moving Vessel` line** naming your craft in `KSP.log`: that line means
-  the game moved the craft itself — [The window](docs/the-window.md) says why it matters.
+Some situations change what a reading says, and are worth keeping in mind when you read it. For
+instance:
 
-A craft you come back to, or switch to, is read the same way: record once its physics has taken it
-over, three to five seconds later.
+- **A craft made of a single part.** KSP sets it back onto the ground itself each time it brings it
+  into the world.
+- **Landing legs or wheels.** A suspension moves the craft while it compresses, and **Settled** takes
+  that in.
+- **A craft that slides.** **Settled** keeps changing instead of stopping. SAS, or another spot, holds
+  it still.
+- **A runway or a launch pad.** They are structures the game places its own way: the craft rests on the
+  structure, not on the ground.
+- **An open throttle**, even by a few percent, even on a craft with no engine: the game no longer holds
+  the craft still.
+- **A `Moving Vessel` line** naming your craft in `KSP.log`: the game moved the craft itself —
+  [This mod's demonstration](docs/this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not)
+  says what that does to the reading.
 
 ## Get it
 

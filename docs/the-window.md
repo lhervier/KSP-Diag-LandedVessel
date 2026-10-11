@@ -22,37 +22,12 @@ until you are close enough again.
 
 | column | meaning |
 |---|---|
-| **On rails** | the last height the game held the craft at while it was running it on rails, before physics started on it — at the opening of a scene, the position the save gives back; for a craft you come back to, the position it is held at until you are within 200 m of it |
+| **On rails** | the last height the game held the craft at while it was running it on rails, before physics started on it — the position the game places the craft at when it brings it into the world, whatever the reason: a save loaded, a craft you switch to, a craft you come back close to (physics starts on it once you are within 200 m) |
 | **Settled** | the distance right now, running live until you press the button — so, once the craft has come to rest |
-| **Moved** | **Settled** minus **On rails** — how far the craft ended up from the position it was given, this loading. Negative means it went down |
+| **Moved** | **Settled** minus **On rails** — how far the craft ended up from the position it was given. Negative means it went down |
 
-**Moved** is how far physics took the craft from the position the game placed it at. Its sign says
-which way the craft went — and how much the figure is worth.
-
-**Negative** — the craft came back above the surface it ends up resting on, and dropped onto it. That
-is a clean measurement: the figure is the gap it fell through.
-
-**Positive** — the craft came back below that surface, so it started off inside it and the physics
-pushed it back out. The figure is then spoiled: it measures how hard it was shoved, not how deep it
-started.
-
-Two things **Moved** does not tell you.
-
-**A craft the game moved itself reads like one that settled.** At the opening of a scene, the game
-sometimes puts a landed craft back onto the ground before its physics starts: stock KSP does it for a
-craft made of a single part and for a craft in the *prelaunch* situation, and some mods, such as
-[Real Solar System](https://github.com/KSP-RO/RealSolarSystem), do it for every landed craft. When the
-craft comes back more than 10 cm off the ground, inside it or above it, it is moved onto it in one
-block, and **Moved** then shows that move, not a craft coming to rest. The window cannot tell the two
-apart; `KSP.log` can: every such move leaves a line `ground contact! - error. Moving Vessel up X.XXXm`
-(or `down`) naming the craft, right before `Unpacking`. That is why
-[Taking a reading](../README.md#taking-a-reading) keeps to loadings without that line, and why, where
-it cannot be avoided, the lines it moved are to be marked as such.
-
-**A jump or a tip-over does not show in the table.** There is one height per loading, and whether the
-craft jumped to get there is something you see on screen, not in the numbers: a jump ends at a height
-like any other. A craft that tipped over is worse: its root part now lies on its side, and **Moved**
-reads the height of a craft lying down, not one that settled. Note what you saw next to each line.
+What the sign of **Moved** is worth, and what it does not tell, is in
+[This mod's demonstration](this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not).
 
 While the craft is still on rails, the live line reads the same distance in both columns and **Moved**
 reads `0.000`; from the first step of physics on, **Settled** follows the craft.
