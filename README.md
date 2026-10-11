@@ -17,19 +17,15 @@ the scene.
 ## This mod's demonstration
 
 The mod measures the distance from your craft to the centre of the body twice: **on rails**, where the
-game hands it back, and **settled**, once it has come to rest. It reads the craft, not the ground:
-[KSP Diag - Terrain Height](https://github.com/lhervier/KSP-Diag-TerrainHeight) reads the ground.
+game hands it back, and **settled**, once it has come to rest.
 
 **→ Full chapter: [This mod's demonstration](docs/this-mods-demonstration.md)**
 
 ## The window
 
 In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**, and
-**Moved**, the difference between the two; the bottom line runs live until *Record* freezes it. It
-follows the craft you are flying, or your target — which is how a parked craft can be followed while you
-drive away from it and back. **Moved** should be zero, and its sign tells you what it is worth: a craft
-that fell onto the surface gives a clean reading, one pushed back out of it does not. It does not show
-when the game itself put the craft back onto the ground, nor a jump or a tip-over.
+**Moved**, the difference between the two. It follows the craft you are flying, or your target; the
+bottom line runs live until *Record* freezes it.
 
 **→ Full chapter: [The window](docs/the-window.md)**
 

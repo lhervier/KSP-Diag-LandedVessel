@@ -26,17 +26,15 @@ until you are close enough again.
 | **Settled** | the distance right now, running live until you press the button — so, once the craft has come to rest |
 | **Moved** | **Settled** minus **On rails** — how far the craft ended up from the position it was given, this loading. Negative means it went down |
 
-**Moved** is the figure to look at, and it should be zero. The craft was at rest on the ground when
-the game took it in hand; handed back at that very height, it has no reason to move at all.
-
-Its sign says which way the craft went — and how much the figure is worth.
+**Moved** is how far physics took the craft from the position the game placed it at. Its sign says
+which way the craft went — and how much the figure is worth.
 
 **Negative** — the craft came back above the surface it ends up resting on, and dropped onto it. That
 is a clean measurement: the figure is the gap it fell through.
 
 **Positive** — the craft came back below that surface, so it started off inside it and the physics
-pushed it back out. Still a craft that did not stay where it was put, but the figure itself is
-spoiled: it measures how hard it was shoved, not how deep it started.
+pushed it back out. The figure is then spoiled: it measures how hard it was shoved, not how deep it
+started.
 
 Two things **Moved** does not tell you.
 
@@ -56,9 +54,8 @@ craft jumped to get there is something you see on screen, not in the numbers: a 
 like any other. A craft that tipped over is worse: its root part now lies on its side, and **Moved**
 reads the height of a craft lying down, not one that settled. Note what you saw next to each line.
 
-Watch the live line as the craft settles and you see the demonstration play out: while the craft is
-still on rails the two distances are equal and **Moved** reads `0.000`, and it is the first step of
-physics that breaks the zero.
+While the craft is still on rails, the live line reads the same distance in both columns and **Moved**
+reads `0.000`; from the first step of physics on, **Settled** follows the craft.
 
 Every frozen line carries a *Delete* button, so a line recorded too early — before the craft had
 finished settling — costs one click to throw away. *Clear table* throws away the lot. The table lives
