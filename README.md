@@ -13,9 +13,6 @@ when you come back to a craft you left parked, when you switch to a craft far aw
 the game hands the craft back at, and the height the craft actually comes to rest at. It lets you check,
 on your own install, whether a landed craft comes back to rest where it was left.
 
-Why that matters, and what was found with it, is told by
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix#why-the-moving-ground-matters).
-
 ## This mod's demonstration
 
 You cannot look at the ground and see whether it moved: the surface you walk on and the surface you see
@@ -69,17 +66,6 @@ rests on, and nothing else:
 
 A craft you come back to, or switch to, is read the same way: record once its physics has taken it
 over, three to five seconds later.
-
-## Measured campaigns
-
-This instrument reads the landed craft in the campaigns of
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), each played without that
-mod and with it, with its protocol, its saves, its scripts and its logs:
-loading the same save, [on bare ground](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-ground.md#the-craft-over-six-loads)
-and [on a runway and the ground beside it](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-loading/the-statics.md#the-craft-on-a-runway),
-[coming back to a craft left parked](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-approach.md)
-and [switching to a craft far away](https://github.com/lhervier/KSP-TerrainPrecisionFix/blob/main/docs/checking-the-culprit-switching.md).
-The figures read with it are on those pages.
 
 ## Get it
 
