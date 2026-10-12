@@ -53,6 +53,20 @@ instance:
   [This mod's demonstration](docs/this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not)
   says what that does to the reading.
 
+## Driving it by script
+
+With [KSP-MCPServer](https://github.com/lhervier/KSP-MCPServer) installed next to it, this mod offers
+its window to a program, as tools of that server: a script presses its buttons and reads what it shows,
+as a player would. Without the server, this mod runs the same.
+
+| tool | what it does |
+|---|---|
+| `landedvessel_record` | presses *Record*: freezes the line in progress into the table and returns it (`OnRailsMm`, `SettledMm`, `MovedMm`) |
+| `landedvessel_read` | reads the window: the craft it follows, the recorded lines and the line in progress |
+| `landedvessel_clear` | presses *Clear table* |
+| `landedvessel_move_window` | moves the window, as dragging it does: `x` and `y` in pixels from the top left corner of the screen; returns its position and size |
+| `landedvessel_show_window` | shows or hides the window, as `Alt+F6` does; the reading goes on either way |
+
 ## Get it
 
 Either way you end up with the same `GameData/KSPDiagLandedVessel/` folder.
