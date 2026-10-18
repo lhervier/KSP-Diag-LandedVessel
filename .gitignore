@@ -1,6 +1,6 @@
 Output/
 obj/
 GameData/KSPDiagLandedVessel/*.dll
-GameData/KSPDiagLandedVessel/*.zip
+GameData/**/*.zip
 CLAUDE.md
 __pycache__/
