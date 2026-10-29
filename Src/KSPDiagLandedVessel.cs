@@ -5,8 +5,9 @@ using UnityEngine;
 namespace com.github.lhervier.ksp.diag.landedvessel
 {
     /// <summary>
-    /// Position recorder. Follows two distances from the centre of the body, in millimetres: the one a
-    /// craft is held at while the game runs it on rails, and the one it is at right now. It reads the
+    /// Position recorder. Follows three distances from the centre of the body, in millimetres: the one a
+    /// craft is held at while the game runs it on rails, the one it is at right now, and the highest it has
+    /// been at since physics took it over. It reads the
     /// craft being flown, or the target when one is set on another craft. The player freezes the pair
     /// into a table whenever it suits them, and the table survives scene changes, so reloading the same
     /// save several times builds it up line by line.
@@ -31,6 +32,10 @@ namespace com.github.lhervier.ksp.diag.landedvessel
         // scene, the game restores a saved target several dozen frames in, by which time a landed
         // craft has been handed to physics.
         private readonly Dictionary<Guid, double> onRailsByVessel = new Dictionary<Guid, double>();
+
+        // The highest distance every loaded craft has been at since it last left the rails, by vessel id, kept
+        // for all of them for the same reason.
+        private readonly Dictionary<Guid, double> highestByVessel = new Dictionary<Guid, double>();
 
         // Mod+F6 shows or hides the window, the same key for every KSP Diag. Static: the choice holds from one
         // flight scene to the next.
@@ -57,16 +62,20 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             {
                 live.OnRailsMm = double.NaN;
                 live.SettledMm = double.NaN;
+                live.HighestMm = double.NaN;
                 return;
             }
 
             live.SettledMm = DistanceToCentreMm(vessel);
             double onRails;
             live.OnRailsMm = onRailsByVessel.TryGetValue(vessel.id, out onRails) ? onRails : double.NaN;
+            double highest;
+            live.HighestMm = highestByVessel.TryGetValue(vessel.id, out highest) ? highest : double.NaN;
         }
 
         /// <summary>
-        /// Follows, for every loaded craft, the distance the game holds it at while it is on rails.
+        /// Follows, for every loaded craft, the distance the game holds it at while it is on rails, and the
+        /// highest distance it has been at since it last left them.
         /// </summary>
         private void TrackOnRailsDistances()
         {
@@ -85,9 +94,26 @@ namespace com.github.lhervier.ksp.diag.landedvessel
                 // rest. A craft that leaves and comes back is read again on its way in, since the
                 // game loads it at 2250 m and only hands it to physics at 200 m: no distance kept
                 // here can outlive the trip that made it stale.
-                if (vessel != null && vessel.mainBody != null && vessel.packed)
+                if (vessel == null || vessel.mainBody == null)
                 {
-                    onRailsByVessel[vessel.id] = DistanceToCentreMm(vessel);
+                    continue;
+                }
+                double distance = DistanceToCentreMm(vessel);
+                if (vessel.packed)
+                {
+                    onRailsByVessel[vessel.id] = distance;
+                    // On rails, the craft is where it will start from: the highest so far is that.
+                    highestByVessel[vessel.id] = distance;
+                }
+                else
+                {
+                    // Read once per frame: a peak between two frames is missed by what the craft
+                    // travels in a frame, a millimetre or so at the speed of a part popping out.
+                    double highest;
+                    if (!highestByVessel.TryGetValue(vessel.id, out highest) || distance > highest)
+                    {
+                        highestByVessel[vessel.id] = distance;
+                    }
                 }
             }
         }
@@ -173,7 +199,7 @@ namespace com.github.lhervier.ksp.diag.landedvessel
 
             // Header
             GUILayout.BeginHorizontal();
-            DrawCells("Record #", "On rails (mm)", "Settled (mm)", "Moved (mm)");
+            DrawCells("Record #", "On rails (mm)", "Settled (mm)", "Moved (mm)", "Highest (mm)");
             GUILayout.EndHorizontal();
 
             // Recorded lines
@@ -186,7 +212,8 @@ namespace com.github.lhervier.ksp.diag.landedvessel
                     FormatUtils.Format(i + 1), 
                     FormatUtils.Format(reading.OnRailsMm),
                     FormatUtils.Format(reading.SettledMm), 
-                    FormatUtils.FormatSigned(reading.MovedMm())
+                    FormatUtils.FormatSigned(reading.MovedMm()),
+                    FormatUtils.FormatSigned(reading.RoseMm())
                 );
                 if (GUILayout.Button("Delete", GUILayout.Width(Constants.COL_BUTTON)))
                 {
@@ -207,7 +234,8 @@ namespace com.github.lhervier.ksp.diag.landedvessel
                 FormatUtils.Format(FormatUtils.NO_NUMBER), 
                 FormatUtils.Format(live.OnRailsMm),
                 FormatUtils.Format(live.SettledMm), 
-                FormatUtils.FormatSigned(live.MovedMm())
+                FormatUtils.FormatSigned(live.MovedMm()),
+                FormatUtils.FormatSigned(live.RoseMm())
             );
             if (GUILayout.Button("Record", GUILayout.Width(Constants.COL_BUTTON)))
             {
@@ -238,7 +266,8 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             Reading reading = new Reading
             {
                 OnRailsMm = live.OnRailsMm,
-                SettledMm = live.SettledMm
+                SettledMm = live.SettledMm,
+                HighestMm = live.HighestMm
             };
             READINGS.Add(reading);
             return reading;
@@ -278,14 +307,15 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             set { windowRect = value; }
         }
 
-        /// <summary>Draws the four columns of one line. The caller owns the surrounding horizontal group,
+        /// <summary>Draws the five columns of one line. The caller owns the surrounding horizontal group,
         /// so that it can put a button at the end of the line.</summary>
-        private static void DrawCells(string record, string onRails, string settled, string moved)
+        private static void DrawCells(string record, string onRails, string settled, string moved, string highest)
         {
             GUILayout.Label(record, GUILayout.Width(Constants.COL_RECORD));
             GUILayout.Label(onRails, GUILayout.Width(Constants.COL_DISTANCE));
             GUILayout.Label(settled, GUILayout.Width(Constants.COL_DISTANCE));
             GUILayout.Label(moved, GUILayout.Width(Constants.COL_MOVED));
+            GUILayout.Label(highest, GUILayout.Width(Constants.COL_MOVED));
         }
     }
 }

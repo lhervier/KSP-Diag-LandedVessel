@@ -10,7 +10,7 @@ namespace com.github.lhervier.ksp.diag.landedvessel
         // the layout, which grows it as records pile up.
         public const float WINDOW_X = 60f;
         public const float WINDOW_Y = 60f;
-        public const float WINDOW_WIDTH = 640f;
+        public const float WINDOW_WIDTH = 740f;
 
         // Column widths, in pixels. Fixed rather than laid out by content: the numbers only speak once
         // aligned as a column, and the skin font is not monospaced.

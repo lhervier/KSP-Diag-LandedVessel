@@ -25,12 +25,16 @@ until you are close enough again.
 | **On rails** | the last height the game held the craft at while it was running it on rails, before physics started on it — the position the game places the craft at when it brings it into the world, whatever the reason: a save loaded, a craft you switch to, a craft you come back close to (physics starts on it once you are within 200 m) |
 | **Settled** | the distance right now, running live until you press the button — so, once the craft has come to rest |
 | **Moved** | **Settled** minus **On rails** — how far the craft ended up from the position it was given. Negative means it went down |
+| **Highest** | the highest the craft has been since physics started on it, minus **On rails** — how far above the position it was given it went on its way, before it came to rest. It catches a craft that pops up and falls back, which **Moved** does not show. It is read once per frame, and 0 means the craft never went above where it was placed |
 
 What the sign of **Moved** is worth, and what it does not tell, is in
 [This mod's demonstration](this-mods-demonstration.md#what-this-instrument-shows-and-what-it-does-not).
 
 While the craft is still on rails, the live line reads the same distance in both columns and **Moved**
-reads `0.000`; from the first step of physics on, **Settled** follows the craft.
+and **Highest** read `0.000`; from the first step of physics on, **Settled** follows the craft, and
+**Highest** keeps the highest it has seen. The window keeps both for every craft loaded around you, not
+only for the one it follows: target another craft after it has come to rest, and its line shows where it
+was placed and how high it went.
 
 Every frozen line carries a *Delete* button, so a line recorded too early — before the craft had
 finished settling — costs one click to throw away. *Clear table* throws away the lot. The table lives

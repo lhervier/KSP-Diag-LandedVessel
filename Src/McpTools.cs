@@ -15,8 +15,8 @@ namespace com.github.lhervier.ksp.diag.landedvessel
     {
         [McpTool("landedvessel_record",
             "Presses Record in the window of KSP Diag - Landed Vessel: freezes the line in progress into " +
-                "its table, and returns it (OnRailsMm, SettledMm, MovedMm, in millimetres from the centre " +
-                "of the body; MovedMm negative downwards).")]
+                "its table, and returns it (OnRailsMm, SettledMm, MovedMm, HighestMm, in millimetres from the " +
+                "centre of the body; MovedMm negative downwards; HighestMm the highest it went above OnRailsMm).")]
         internal static object Record()
         {
             return Line(Window().Record());
@@ -24,8 +24,8 @@ namespace com.github.lhervier.ksp.diag.landedvessel
 
         [McpTool("landedvessel_read",
             "Reads the window of KSP Diag - Landed Vessel: the craft it follows, its recorded lines and " +
-                "the line in progress (OnRailsMm, SettledMm, MovedMm, in millimetres from the centre of " +
-                "the body; MovedMm negative downwards).")]
+                "the line in progress (OnRailsMm, SettledMm, MovedMm, HighestMm, in millimetres from the " +
+                "centre of the body; MovedMm negative downwards; HighestMm the highest it went above OnRailsMm).")]
         internal static object Read()
         {
             KSPDiagLandedVessel window = Window();
@@ -76,15 +76,16 @@ namespace com.github.lhervier.ksp.diag.landedvessel
             return new Dictionary<string, object> { { "visible", KSPDiagLandedVessel.WindowVisible } };
         }
 
-        // One line of the table as the tools return it: the two distances and their difference, which
-        // the table shows but Reading only computes.
+        // One line of the table as the tools return it: the two distances, their difference and the highest
+        // rise, as the table shows them.
         private static Dictionary<string, object> Line(Reading reading)
         {
             return new Dictionary<string, object>
             {
                 { "OnRailsMm", reading.OnRailsMm },
                 { "SettledMm", reading.SettledMm },
-                { "MovedMm", reading.MovedMm() }
+                { "MovedMm", reading.MovedMm() },
+                { "HighestMm", reading.RoseMm() }
             };
         }
 

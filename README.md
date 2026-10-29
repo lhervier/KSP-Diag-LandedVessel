@@ -23,9 +23,10 @@ game hands it back, and **settled**, once it has come to rest.
 
 ## The window
 
-In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**, and
-**Moved**, the difference between the two. It follows the craft you are flying, or your target; the
-bottom line runs live until *Record* freezes it.
+In flight, a window shows one line per reading, in millimetres: **On rails**, **Settled**,
+**Moved**, the difference between the two, and **Highest**, how far above **On rails** the craft went
+on its way. It follows the craft you are flying, or your target; the bottom line runs live until
+*Record* freezes it.
 
 **→ Full chapter: [The window](docs/the-window.md)**
 
@@ -61,7 +62,7 @@ as a player would. Without the server, this mod runs the same.
 
 | tool | what it does |
 |---|---|
-| `landedvessel_record` | presses *Record*: freezes the line in progress into the table and returns it (`OnRailsMm`, `SettledMm`, `MovedMm`) |
+| `landedvessel_record` | presses *Record*: freezes the line in progress into the table and returns it (`OnRailsMm`, `SettledMm`, `MovedMm`, `HighestMm`) |
 | `landedvessel_read` | reads the window: the craft it follows, the recorded lines and the line in progress |
 | `landedvessel_clear` | presses *Clear table* |
 | `landedvessel_move_window` | moves the window, as dragging it does: `x` and `y` in pixels from the top left corner of the screen; returns its position and size |
